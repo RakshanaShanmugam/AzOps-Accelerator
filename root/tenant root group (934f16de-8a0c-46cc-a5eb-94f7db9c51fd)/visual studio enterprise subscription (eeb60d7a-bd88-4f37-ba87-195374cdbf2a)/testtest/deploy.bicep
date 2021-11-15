@@ -96,10 +96,6 @@ var ddosProtectionPlan = {
   id: ddosProtectionPlanId
 }
 
-module pid_cuaId '.bicep/nested_cuaId.bicep' = if (!empty(cuaId)) {
-  name: 'pid-${cuaId}'
-  params: {}
-}
 
 resource virtualNetwork 'Microsoft.Network/virtualNetworks@2021-05-01' = {
   name: name
@@ -164,13 +160,6 @@ resource appServiceEnvironment_diagnosticSettings 'Microsoft.Insights/diagnostic
   scope: virtualNetwork
 }
 
-module virtualNetwork_rbac '.bicep/nested_rbac.bicep' = [for (roleAssignment, index) in roleAssignments: {
-  name: '${uniqueString(deployment().name, location)}-Vnet-Rbac-${index}'
-  params: {
-    roleAssignmentObj: roleAssignment
-    resourceName: virtualNetwork.name
-  }
-}]
 
 @description('The resource group the virtual network was deployed into')
 output virtualNetworkResourceGroup string = resourceGroup().name
