@@ -90,8 +90,7 @@ var ddosProtectionPlan = {
   id: ddosProtectionPlanId
 }
 
-
-resource virtualNetwork 'Microsoft.Network/virtualNetworks@2021-05-01' = {
+resource virtualNetwork 'Microsoft.Network/virtualNetworks@2021-03-01' = {
   name: name
   location: location
   tags: tags
