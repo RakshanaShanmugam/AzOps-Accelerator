@@ -11,7 +11,7 @@
   "resources": [
     {
       "type": "Microsoft.KeyVault/vaults",
-      "name": "sxx-az-kv-weu-x-056",
+      "name": "sxx-az-kv-weu-x-45",
       "apiVersion": "2021-06-01-preview",
       "location": "eastus",
       "tags": {},
