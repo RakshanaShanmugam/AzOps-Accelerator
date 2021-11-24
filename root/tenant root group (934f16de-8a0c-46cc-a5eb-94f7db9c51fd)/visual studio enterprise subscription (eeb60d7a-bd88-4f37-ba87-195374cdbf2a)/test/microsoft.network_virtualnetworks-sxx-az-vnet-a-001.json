@@ -11,21 +11,21 @@
   "resources": [
     {
       "type": "Microsoft.Network/virtualNetworks",
-      "name": "sxx-az-vnet-c-001",
+      "name": "sxx-az-vnet-a-001",
       "apiVersion": "2021-05-01",
-      "location": "northeurope",
+      "location": "eastus",
       "tags": {},
       "properties": {
         "addressSpace": {
           "addressPrefixes": [
-            "10.2.0.0/16"
+            "10.0.0.0/16"
           ]
         },
         "subnets": [
           {
             "name": "GatewaySubnet",
             "properties": {
-              "addressPrefix": "10.2.255.0/24",
+              "addressPrefix": "10.0.255.0/24",
               "delegations": [],
               "privateEndpointNetworkPolicies": "Enabled",
               "privateLinkServiceNetworkPolicies": "Enabled"
@@ -35,7 +35,7 @@
           {
             "name": "sxx-az-subnet-x-001",
             "properties": {
-              "addressPrefix": "10.2.0.0/24",
+              "addressPrefix": "10.0.0.0/24",
               "serviceEndpoints": [
                 {
                   "service": "Microsoft.EventHub",
@@ -46,14 +46,14 @@
                 {
                   "service": "Microsoft.Sql",
                   "locations": [
-                    "northeurope"
+                    "eastus"
                   ]
                 },
                 {
                   "service": "Microsoft.Storage",
                   "locations": [
-                    "northeurope",
-                    "westeurope"
+                    "eastus",
+                    "westus"
                   ]
                 },
                 {
@@ -72,7 +72,7 @@
           {
             "name": "sxx-az-subnet-x-002",
             "properties": {
-              "addressPrefix": "10.2.1.0/24",
+              "addressPrefix": "10.0.1.0/24",
               "serviceEndpoints": [
                 {
                   "service": "Microsoft.EventHub",
@@ -83,14 +83,14 @@
                 {
                   "service": "Microsoft.Sql",
                   "locations": [
-                    "northeurope"
+                    "eastus"
                   ]
                 },
                 {
                   "service": "Microsoft.Storage",
                   "locations": [
-                    "northeurope",
-                    "westeurope"
+                    "eastus",
+                    "westus"
                   ]
                 },
                 {
@@ -109,7 +109,7 @@
           {
             "name": "sxx-az-subnet-x-003",
             "properties": {
-              "addressPrefix": "10.2.2.0/24",
+              "addressPrefix": "10.0.2.0/24",
               "delegations": [
                 {
                   "name": "sqlMiDel",
@@ -132,7 +132,7 @@
           {
             "name": "sxx-az-subnet-x-004",
             "properties": {
-              "addressPrefix": "10.2.3.0/24",
+              "addressPrefix": "10.0.3.0/24",
               "delegations": [
                 {
                   "name": "netappDel",
@@ -155,7 +155,7 @@
           {
             "name": "AzureFirewallSubnet",
             "properties": {
-              "addressPrefix": "10.2.4.0/24",
+              "addressPrefix": "10.0.4.0/24",
               "delegations": [],
               "privateEndpointNetworkPolicies": "Enabled",
               "privateLinkServiceNetworkPolicies": "Enabled"
@@ -165,7 +165,7 @@
           {
             "name": "AzureBastionSubnet",
             "properties": {
-              "addressPrefix": "10.2.5.0/24",
+              "addressPrefix": "10.0.5.0/24",
               "delegations": [],
               "privateEndpointNetworkPolicies": "Enabled",
               "privateLinkServiceNetworkPolicies": "Enabled"
@@ -175,7 +175,7 @@
           {
             "name": "sxx-az-subnet-x-005",
             "properties": {
-              "addressPrefix": "10.2.6.0/24",
+              "addressPrefix": "10.0.6.0/24",
               "delegations": [],
               "privateEndpointNetworkPolicies": "Disabled",
               "privateLinkServiceNetworkPolicies": "Enabled"
