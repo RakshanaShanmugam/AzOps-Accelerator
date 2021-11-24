@@ -16,7 +16,6 @@
       "location": "northeurope",
       "tags": null,
       "properties": {
-        "ipAddress": "40.69.195.232",
         "publicIPAddressVersion": "IPv4",
         "publicIPAllocationMethod": "Dynamic",
         "idleTimeoutInMinutes": 4,
