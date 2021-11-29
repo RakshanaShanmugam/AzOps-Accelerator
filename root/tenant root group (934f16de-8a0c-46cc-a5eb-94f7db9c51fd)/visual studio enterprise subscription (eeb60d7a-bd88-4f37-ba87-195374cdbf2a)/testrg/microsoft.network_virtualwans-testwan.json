@@ -12,19 +12,14 @@
     {
       "type": "Microsoft.Network/virtualWans",
       "name": "testwan",
-      "apiVersion": "2021-05-01",
+      "apiVersion": "2021-06-01",
       "location": "northeurope",
       "tags": null,
       "properties": {
         "disableVpnEncryption": false,
         "allowBranchToBranchTraffic": true,
         "office365LocalBreakoutCategory": "None",
-        "type": "Standard",
-        "virtualHubs": [
-          {
-            "id": "/subscriptions/eeb60d7a-bd88-4f37-ba87-195374cdbf2a/resourceGroups/TestRG/providers/Microsoft.Network/virtualHubs/testhub"
-          }
-        ]
+        "type": "Standard"
       }
     }
   ],
