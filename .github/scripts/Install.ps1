@@ -4,7 +4,7 @@ function Install-SourceModule {
     param(
         $Repository,
 
-        $Branch = "sogangul-AzOps-ResourceDeletion"
+        $Branch = "sogangul-AzOps-AddExtendedChildResources"
     )
 
     process {
