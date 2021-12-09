@@ -24,7 +24,7 @@
             "Core.OfferType": "MS-AZR-0017P",
             "Core.PartialMgDiscoveryRoot": [],
             "Core.SkipPolicy": true,
-            "Core.SkipResource": false,
+            "Core.SkipResource": true,
             "Core.SkipResourceGroup": false,
             "Core.SkipResourceType": [
                 "microsoft.alertsmanagement/smartDetectorAlertRules",
@@ -34,7 +34,7 @@
                 "Microsoft.VSOnline/plans"
             ],
             "Core.SkipRole": true,
-            "Core.SkipExtendedChildResourcesDiscovery": true,
+            "Core.SkipExtendedChildResourcesDiscovery": false,
             "Core.SubscriptionsToIncludeResourceGroups": "*",
             "Core.TemplateParameterFileSuffix": ".json",
             "Core.ThrottleLimit": 10
