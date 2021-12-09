@@ -25,13 +25,15 @@
             "Core.PartialMgDiscoveryRoot": [],
             "Core.SkipPolicy": true,
             "Core.SkipResource": false,
-            "Core.SkipResourceGroup": true,
+            "Core.SkipResourceGroup": false,
             "Core.SkipResourceType": [
                 "microsoft.alertsmanagement/smartDetectorAlertRules",
                 "Microsoft.PowerPlatform/accounts",
                 "Microsoft.PowerPlatform/enterprisePolicies",
                 "microsoft.visualstudio/account",
-                "Microsoft.VSOnline/plans"
+                "Microsoft.VSOnline/plans",
+                "Microsoft.Network/virtualHubs/hubRouteTables",
+                "Microsoft.Storage/storageAccounts/blobServices/containers"
             ],
             "Core.SkipRole": true,
             "Core.SkipExtendedChildResourcesDiscovery": false,
