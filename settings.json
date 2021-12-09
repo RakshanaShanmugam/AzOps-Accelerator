@@ -23,7 +23,7 @@
             "Core.InvalidateCache": true,
             "Core.OfferType": "MS-AZR-0017P",
             "Core.PartialMgDiscoveryRoot": [],
-            "Core.SkipPolicy": true,
+            "Core.SkipPolicy": false,
             "Core.SkipResource": false,
             "Core.SkipResourceGroup": false,
             "Core.SkipResourceType": [
@@ -31,11 +31,9 @@
                 "Microsoft.PowerPlatform/accounts",
                 "Microsoft.PowerPlatform/enterprisePolicies",
                 "microsoft.visualstudio/account",
-                "Microsoft.VSOnline/plans",
-                "Microsoft.Network/virtualHubs/hubRouteTables",
-                "Microsoft.Storage/storageAccounts/blobServices/containers"
+                "Microsoft.VSOnline/plans"
             ],
-            "Core.SkipRole": true,
+            "Core.SkipRole": false,
             "Core.SkipExtendedChildResourcesDiscovery": false,
             "Core.SubscriptionsToIncludeResourceGroups": "*",
             "Core.TemplateParameterFileSuffix": ".json",
