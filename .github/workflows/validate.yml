@@ -118,6 +118,11 @@ jobs:
       - name: "Results"
         shell: bash
         run: |
-          gh pr comment ${{ github.event.pull_request.number }} --body-file /tmp/OUTPUT.md
+          if [ -f /tmp/OUTPUT.md ]; then
+            gh pr comment ${{ github.event.pull_request.number }} --body-file /tmp/OUTPUT.md
+          else
+            echo "The output is not printed because file not exist"
+            exit 1
+          fi
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
