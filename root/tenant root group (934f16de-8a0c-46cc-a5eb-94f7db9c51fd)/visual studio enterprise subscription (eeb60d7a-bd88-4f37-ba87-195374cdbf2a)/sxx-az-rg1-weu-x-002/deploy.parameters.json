@@ -5,12 +5,12 @@
     "keyVaultName": {
      "value": "sxx-az-kv-weu-x-057"
     },
-//     "enableSoftDelete": {
-//       "value": true
-//     },
-//     "softDeleteRetentionInDays": {
-//       "value": 7
-//     },
+     "enableSoftDelete": {
+       "value": true
+     },
+     "softDeleteRetentionInDays": {
+       "value": 7
+     },
      "enableRbacAuthorization": {
        "value": false
      }
