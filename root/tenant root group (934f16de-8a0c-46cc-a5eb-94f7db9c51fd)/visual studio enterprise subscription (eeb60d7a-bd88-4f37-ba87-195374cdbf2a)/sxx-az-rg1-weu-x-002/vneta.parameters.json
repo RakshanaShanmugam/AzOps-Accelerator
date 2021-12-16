@@ -36,26 +36,6 @@
                     "delegations": []
                 },
                 {
-                    "name": "sxx-az-subnet-x-002",
-                    "addressPrefix": "10.0.1.0/24",
-                    "networkSecurityGroupName": "",
-                    "routeTableName": "",
-                    "serviceEndpoints": [{
-                            "service": "Microsoft.EventHub"
-                        },
-                        {
-                            "service": "Microsoft.Sql"
-                        },
-                        {
-                            "service": "Microsoft.Storage"
-                        },
-                        {
-                            "service": "Microsoft.KeyVault"
-                        }
-                    ],
-                    "delegations": []
-                },
-                {
                     "name": "sxx-az-subnet-x-003",
                     "addressPrefix": "10.0.2.0/24",
                     "networkSecurityGroupName": "",
