@@ -89,33 +89,5 @@
                 }
             ]
         }
-        //,
-        // "virtualNetworkPeerings": {
-        //     "value": [{
-        //             "remoteVirtualNetworkId": "/subscriptions/<<subscriptionId>>/resourceGroups/IaCSBootCamp-rg/providers/Microsoft.Network/virtualNetworks/sxx-az-vnet-b-001",
-        //             "allowForwardedTraffic": true,
-        //             "allowGatewayTransit": false,
-        //             "allowVirtualNetworkAccess": true,
-        //             "useRemoteGateways": false
-        //         },
-        //         {
-        //             "remoteVirtualNetworkId": "/subscriptions/<<subscriptionId>>/resourceGroups/IaCSBootCamp-rg/providers/Microsoft.Network/virtualNetworks/sxx-az-vnet-c-001",
-        //             "allowForwardedTraffic": true,
-        //             "allowGatewayTransit": false,
-        //             "allowVirtualNetworkAccess": true,
-        //             "useRemoteGateways": false
-        //         }
-        //     ]
-        // } //,
-        // "roleAssignments": {
-        //     "value": [
-        //         {
-        //             "roleDefinitionIdOrName": "Reader",
-        //             "principalIds": [
-        //                 "cf33fea8-b30f-424f-ab73-c48d99e0b222"
-        //             ]
-        //         }
-        //     ]
-        // }
     }
 }
