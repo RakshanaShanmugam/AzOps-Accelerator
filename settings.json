@@ -35,7 +35,7 @@
                 "Microsoft.VSOnline/plans"
             ],
             "Core.SkipRole": true,
-            "Core.SkipExtendedChildResourcesDiscovery": false,
+            "Core.SkipExtendedChildResourcesDiscovery": true,
             "Core.SubscriptionsToIncludeResourceGroups": "*",
             "Core.TemplateParameterFileSuffix": ".json",
             "Core.ThrottleLimit": 10
