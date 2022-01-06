@@ -24,8 +24,8 @@
             "Core.OfferType": "MS-AZR-0017P",
             "Core.PartialMgDiscoveryRoot": [],
             "Core.SkipPolicy": true,
-            "Core.SkipResource": true,
-            "Core.SkipResourceGroup": false,
+            "Core.SkipResource": false,
+            "Core.SkipResourceGroup": true,
             "Core.SkipResourceType": [
                 "microsoft.alertsmanagement/smartDetectorAlertRules",
                 "Microsoft.PowerPlatform/accounts",
