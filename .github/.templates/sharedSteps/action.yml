@@ -1,6 +1,6 @@
 on:
   workflow_call:
-    secrets:
+    inputs:
       ARM_CLIENT_ID:
         required: true
       ARM_CLIENT_SECRET:
