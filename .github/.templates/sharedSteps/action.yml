@@ -26,5 +26,5 @@ runs:
     - name: "Connect"
       shell: pwsh
       run: |
-        $credential = New-Object PSCredential -ArgumentList ${{secrets.ARM_CLIENT_ID}}, (ConvertTo-SecureString -String {{secrets.ARM_CLIENT_SECRET}} -AsPlainText -Force)
-        Connect-AzAccount -TenantId {{secrets.ARM_TENANT_ID}} -ServicePrincipal -Credential $credential -SubscriptionId {{secrets.ARM_SUBSCRIPTION_ID}}
+        $credential = New-Object PSCredential -ArgumentList ${{inputs.ARM_CLIENT_ID}}, (ConvertTo-SecureString -String {{inputs.ARM_CLIENT_SECRET}} -AsPlainText -Force)
+        Connect-AzAccount -TenantId {{inputs.ARM_TENANT_ID}} -ServicePrincipal -Credential $credential -SubscriptionId {{inputs.ARM_SUBSCRIPTION_ID}}
