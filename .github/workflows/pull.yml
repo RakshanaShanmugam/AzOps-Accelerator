@@ -151,32 +151,28 @@ jobs:
         run: |
           git checkout -b ${{ env.branch }}
 
+      - name: 'Run sharedsteps'
+        uses: ./.github/actions/.templates/sharedSteps
       #
       # Dependencies
       # Install required runtime modules
       #
 
-      - name: "Dependencies"
-        run: |
-          . .github/scripts/Install.ps1
-          Install-SourceModule -Repository "SomilGanguly/AzOps" -Branch "sogangul-AzOps-AddExtendedChildResources"
-          $module = Get-Module -Name AzOps -ListAvailable
-          $data = Import-PowerShellDataFile -Path $module.Path
-          foreach ($dependency in $data.RequiredModules) {
-              Install-Module -Name $dependency.ModuleName -RequiredVersion $dependency.RequiredVersion -Force
-          }
-        shell: pwsh
+      # - name: "Dependencies"
+      #   shell: pwsh
+      #   run: |
+      #     Install-Module -Name "AzOps" -Force
 
-      #
-      # Connect
-      # Authenticate Azure context
-      #
+      # #
+      # # Connect
+      # # Authenticate Azure context
+      # #
 
-      - name: "Connect"
-        shell: pwsh
-        run: |
-          $credential = New-Object PSCredential -ArgumentList $env:ARM_CLIENT_ID, (ConvertTo-SecureString -String $env:ARM_CLIENT_SECRET -AsPlainText -Force)
-          Connect-AzAccount -TenantId $env:ARM_TENANT_ID -ServicePrincipal -Credential $credential -SubscriptionId $env:ARM_SUBSCRIPTION_ID
+      # - name: "Connect"
+      #   shell: pwsh
+      #   run: |
+      #     $credential = New-Object PSCredential -ArgumentList $env:ARM_CLIENT_ID, (ConvertTo-SecureString -String $env:ARM_CLIENT_SECRET -AsPlainText -Force)
+      #     Connect-AzAccount -TenantId $env:ARM_TENANT_ID -ServicePrincipal -Credential $credential -SubscriptionId $env:ARM_SUBSCRIPTION_ID
 
       #
       # Initialize
