@@ -1,0 +1,30 @@
+on:
+  workflow_call:
+    secrets:
+      ARM_CLIENT_ID:
+        required: true
+      ARM_CLIENT_SECRET:
+        required: true
+      ARM_TENANT_ID:
+        required: true
+      ARM_SUBSCRIPTION_ID:
+        required: true
+      
+runs:
+  using: 'composite'
+  steps:
+    - name: "Dependencies"
+      shell: pwsh
+      run: |
+        Install-Module -Name "AzOps" -Force
+
+      #
+      # Connect
+      # Authenticate Azure context
+      #
+
+    - name: "Connect"
+      shell: pwsh
+      run: |
+        $credential = New-Object PSCredential -ArgumentList ${{secrets.ARM_CLIENT_ID}}, (ConvertTo-SecureString -String {{secrets.ARM_CLIENT_SECRET}} -AsPlainText -Force)
+        Connect-AzAccount -TenantId {{secrets.ARM_TENANT_ID}} -ServicePrincipal -Credential $credential -SubscriptionId {{secrets.ARM_SUBSCRIPTION_ID}}
