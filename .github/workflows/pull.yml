@@ -132,12 +132,6 @@ jobs:
         
       - name: 'Run sharedsteps'
         uses: ./.github/.templates/sharedSteps
-        with:
-          clientid: ${{ secrets.ARM_CLIENT_ID }}
-          tenantId: ${{ secrets.ARM_TENANT_ID }}
-          subscriptionId: ${{ secrets.ARM_SUBSCRIPTION_ID }}
-        secrets:
-          clientsecret: ${{ secrets.ARM_CLIENT_SECRET }}
           
       #
       # Configure
