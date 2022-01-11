@@ -134,10 +134,11 @@ jobs:
         uses: ./.github/.templates/sharedSteps
         with:
           clientid: ${{ secrets.ARM_CLIENT_ID }}
-          clientsecret: ${{ secrets.ARM_CLIENT_SECRET }}
           tenantId: ${{ secrets.ARM_TENANT_ID }}
           subscriptionId: ${{ secrets.ARM_SUBSCRIPTION_ID }}
-
+        secrets:
+          clientsecret: ${{ secrets.ARM_CLIENT_SECRET }}
+          
       #
       # Configure
       # Set global options
