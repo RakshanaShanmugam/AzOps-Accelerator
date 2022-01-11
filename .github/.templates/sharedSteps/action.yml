@@ -24,8 +24,8 @@ runs:
     - name: "Connect1"
       shell: pwsh
       run: |
-         write-host "OK" {{secrets.ARM_CLIENT_SECRET}}
-         write-host "OK" {{inputs.ARM_SUBSCRIPTION_ID}}
+         write-host "OK" ' {{secrets.ARM_CLIENT_SECRET}} '
+         write-host "OK" ' {{inputs.ARM_SUBSCRIPTION_ID}} '
       #
       # Connect
       # Authenticate Azure context
