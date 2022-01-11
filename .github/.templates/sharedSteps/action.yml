@@ -10,7 +10,7 @@ on:
       subscriptionId:
         required: true
     secrets:
-      clientsecret:
+      ARM_CLIENT_SECRET:
         required: true
       
 runs:
@@ -24,7 +24,7 @@ runs:
     - name: "Connect1"
       shell: pwsh
       run: |
-         write-host "OK" {{env.ARM_CLIENT_SECRET}}
+         write-host "OK" {{secrets.ARM_CLIENT_SECRET}}
       #
       # Connect
       # Authenticate Azure context
