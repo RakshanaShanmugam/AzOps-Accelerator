@@ -129,16 +129,9 @@ jobs:
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
-      - name: 'Replace Parameter File Tokens [${{ inputs.parameterFilePath }}] '
-        shell: pwsh
-        run: |
-         write-host "OK" ${{ secrets.ARM_CLIENT_SECRET }} 
-        
         
       - name: 'Run sharedsteps'
         uses: ./.github/.templates/sharedSteps
-        with:
-          ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
           
       #
       # Configure
