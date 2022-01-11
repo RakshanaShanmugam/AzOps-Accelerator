@@ -1,13 +1,13 @@
 on:
   workflow_call:
     inputs:
-      ARM_CLIENT_ID:
+      clientid:
         required: true
-      ARM_CLIENT_SECRET:
+      clientsecret:
         required: true
-      ARM_TENANT_ID:
+      tenantId:
         required: true
-      ARM_SUBSCRIPTION_ID:
+      subscriptionId:
         required: true
       
 runs:
@@ -26,5 +26,5 @@ runs:
     - name: "Connect"
       shell: pwsh
       run: |
-        $credential = New-Object PSCredential -ArgumentList ${{inputs.ARM_CLIENT_ID}}, (ConvertTo-SecureString -String {{inputs.ARM_CLIENT_SECRET}} -AsPlainText -Force)
-        Connect-AzAccount -TenantId {{inputs.ARM_TENANT_ID}} -ServicePrincipal -Credential $credential -SubscriptionId {{inputs.ARM_SUBSCRIPTION_ID}}
+        $credential = New-Object PSCredential -ArgumentList ${{inputs.clientid}}, (ConvertTo-SecureString -String {{inputs.clientsecret}} -AsPlainText -Force)
+        Connect-AzAccount -TenantId {{inputs.tenantId}} -ServicePrincipal -Credential $credential -SubscriptionId {{inputs.subscriptionId}}
