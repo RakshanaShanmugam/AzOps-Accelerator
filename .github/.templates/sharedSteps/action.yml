@@ -1,17 +1,6 @@
 on:
   workflow_call:
     inputs:
-      clientid:
-        required: true
-     # clientsecret:
-     #   required: true
-      tenantId:
-        required: true
-      ARM_SUBSCRIPTION_ID:
-        required: true
-    secrets:
-      ARM_CLIENT_SECRET:
-        required: true
       
 runs:
   using: 'composite'
@@ -20,12 +9,6 @@ runs:
       shell: pwsh
       run: |
         Install-Module -Name "AzOps" -Force
-
-    - name: "Connect1"
-      shell: pwsh
-      run: |
-         write-host "OK" ${{ env.ARM_CLIENT_SECRET }}
-         write-host "OK" ${{ env.ARM_SUBSCRIPTION_ID }}
       #
       # Connect
       # Authenticate Azure context
