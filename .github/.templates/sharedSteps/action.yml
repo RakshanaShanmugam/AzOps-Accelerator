@@ -21,6 +21,10 @@ runs:
       run: |
         Install-Module -Name "AzOps" -Force
 
+    - name: "Connect1"
+      shell: pwsh
+      run: |
+         write-host "OK" {{env.ARM_CLIENT_SECRET}}
       #
       # Connect
       # Authenticate Azure context
