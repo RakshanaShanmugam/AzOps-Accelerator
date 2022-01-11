@@ -3,11 +3,14 @@ on:
     inputs:
       clientid:
         required: true
-      clientsecret:
-        required: true
+     # clientsecret:
+     #   required: true
       tenantId:
         required: true
       subscriptionId:
+        required: true
+    secrets:
+      clientsecret:
         required: true
       
 runs:
@@ -26,5 +29,5 @@ runs:
     - name: "Connect"
       shell: pwsh
       run: |
-        $credential = New-Object PSCredential -ArgumentList ${{inputs.clientid}}, (ConvertTo-SecureString -String {{inputs.clientsecret}} -AsPlainText -Force)
+        $credential = New-Object PSCredential -ArgumentList ${{inputs.clientid}}, (ConvertTo-SecureString -String {{secrets.clientsecret}} -AsPlainText -Force)
         Connect-AzAccount -TenantId {{inputs.tenantId}} -ServicePrincipal -Credential $credential -SubscriptionId {{inputs.subscriptionId}}
