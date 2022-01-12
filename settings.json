@@ -23,7 +23,7 @@
             "Core.InvalidateCache": true,
             "Core.OfferType": "MS-AZR-0017P",
             "Core.PartialMgDiscoveryRoot": [],
-            "Core.SkipPolicy": false,
+            "Core.SkipPolicy": true,
             "Core.SkipResource": false,
             "Core.SkipResourceGroup": false,
             "Core.SkipResourceType": [
