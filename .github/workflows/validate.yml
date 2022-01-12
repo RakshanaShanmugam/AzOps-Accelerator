@@ -68,9 +68,13 @@ jobs:
       # Diff
       # List index changes
       #
+      - name: "Checkout"
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      
       - name: 'Run validate deploy'
         uses: ./.github/.templates/validate-deploy
-        
       # - name: "Diff"
       #   id: diff
       #   shell: bash
