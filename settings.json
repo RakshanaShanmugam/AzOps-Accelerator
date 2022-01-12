@@ -28,14 +28,13 @@
             "Core.SkipResourceGroup": false,
             "Core.SkipResourceType": [
                 "microsoft.alertsmanagement/smartDetectorAlertRules",
-                "Microsoft.Storage/storageAccounts/fileServices/shares",
                 "Microsoft.PowerPlatform/accounts",
                 "Microsoft.PowerPlatform/enterprisePolicies",
                 "microsoft.visualstudio/account",
                 "Microsoft.VSOnline/plans"
             ],
             "Core.SkipRole": true,
-            "Core.SkipExtendedChildResourcesDiscovery": true,
+            "Core.SkipExtendedChildResourcesDiscovery": false,
             "Core.SubscriptionsToIncludeResourceGroups": "*",
             "Core.TemplateParameterFileSuffix": ".json",
             "Core.ThrottleLimit": 10
