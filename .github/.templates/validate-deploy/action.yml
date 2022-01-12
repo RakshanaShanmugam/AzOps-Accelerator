@@ -32,7 +32,7 @@ runs:
         run: |
           Import-PSFConfig -Path settings.json -Schema MetaJson -EnableException
           Initialize-AzOpsEnvironment
-          $RunWhatIf = -not ('${{parameters.deploy}}' -eq 'true')
+          $RunWhatIf = -not ('${{inputs.deploy}}' -eq 'true')
           $diff = Get-Content -Path /tmp/diff.txt
           $module = Get-Module -Name AzOps
           if(Test-Path -Path "/tmp/diffdeletedfiles.txt")
