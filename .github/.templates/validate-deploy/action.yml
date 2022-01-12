@@ -1,6 +1,8 @@
 on:
   workflow_call:
     inputs:
+      deploy:
+        default: false
 
 runs:
   using: 'composite'
@@ -30,14 +32,15 @@ runs:
         run: |
           Import-PSFConfig -Path settings.json -Schema MetaJson -EnableException
           Initialize-AzOpsEnvironment
+          $RunWhatIf = -not ('${{parameters.deploy}}' -eq 'true')
           $diff = Get-Content -Path /tmp/diff.txt
           $module = Get-Module -Name AzOps
           if(Test-Path -Path "/tmp/diffdeletedfiles.txt")
           {
             $diffdeletedfiles = Get-Content -Path /tmp/diffdeletedfiles.txt
-            $module.Invoke({ Invoke-AzOpsPush -ChangeSet $diff -DeleteSetContents $diffdeletedfiles -WhatIf })
+            $module.Invoke({ Invoke-AzOpsPush -ChangeSet $diff -DeleteSetContents $diffdeletedfiles -WhatIf:$RunWhatIf })
           }
           else{
-            $module.Invoke({ Invoke-AzOpsPush -ChangeSet $diff -WhatIf })
+            $module.Invoke({ Invoke-AzOpsPush -ChangeSet $diff -WhatIf:$RunWhatIf })
           }
           Get-Job | Remove-Job -Force
