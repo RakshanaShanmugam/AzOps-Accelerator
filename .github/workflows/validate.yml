@@ -49,7 +49,7 @@ jobs:
 
       - name: 'Sharedsteps'
         uses: ./.github/.templates/sharedSteps
-
+      
       #
       # Validate
       # Run what-if deployment on any templates changed
