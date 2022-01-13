@@ -1,0 +1,40 @@
+---
+name: "Test"
+
+on:
+  #
+  # Workflow Dispatch
+  # This is to invoke the action from the GitHub UI
+  #
+
+  workflow_dispatch:
+
+env:
+  #
+  # Credentials
+  #
+
+  ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
+  ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
+  ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
+  ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  AZOPS_MODULE_VERSION: ${{secrets.AZOPS_MODULE_VERSION}}
+
+jobs:
+  pull:
+    #
+    # Pull
+    #
+
+    name: "Pull"
+    runs-on: ubuntu-20.04
+
+    steps:
+      - name: "Get Latest AzOps version"
+        if: ${{ env.AZOPS_MODULE_VERSION == '' }}
+        shell: pwsh
+        run: |
+          $latestVersionUri = "https://www.powershellgallery.com/api/v2/FindPackagesById()?id='AzOps'&`$filter=IsLatestVersion"
+          $latestVersionId = (Invoke-RestMethod $latestVersionUri).properties.NormalizedVersion
+          echo $latestVersionId >> $AZOPS_MODULE_VERSION
