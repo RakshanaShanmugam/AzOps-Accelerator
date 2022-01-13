@@ -74,6 +74,7 @@ jobs:
       - name: 'Run validate deploy'
         with:
           deploy: true
+          name: 'deploy'
         uses: ./.github/.templates/validate-deploy
       #
       # Diff
