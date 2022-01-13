@@ -39,4 +39,9 @@ jobs:
           $latestVersionId = (Invoke-RestMethod $latestVersionUri).properties.NormalizedVersion
           Write-Host "version" $latestVersionId
           echo "AZOPS_MODULE_VERSION=test" >> $GITHUB_ENV
-          Write-Host "sdf" ${{ env.AZOPS_MODULE_VERSION }}
+          Write-Host "sdf" $GITHUB_ENV
+          
+      - name: Use the value
+        shell: bash
+        run: |
+          echo "${{ env.AZOPS_MODULE_VERSION }}" # This will output 'yellow'
