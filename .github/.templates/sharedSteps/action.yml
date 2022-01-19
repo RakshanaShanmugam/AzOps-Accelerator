@@ -29,12 +29,7 @@ runs:
     - name: "Dependencies"
       shell: pwsh
       run: |
-        echo ${{ steps.AzOpsversion.outputs.AZOPS_MODULE_VERSION }}"
-        Write-Host  "${Env:AZOPS_MODULE_VERSION}"
-        Write-Host "OK" ${AZOPS_MODULE_VERSION}
-        Write-Host "OK" ${{env.AZOPS_MODULE_VERSION}}
-        Write-Host "ok3" $AZOPS_MODULE_VERSION
-        Install-Module -Name "AzOps" -Force
+          Install-Module -Name "AzOps" -Force
       #
       # Connect
       # Authenticate Azure context
