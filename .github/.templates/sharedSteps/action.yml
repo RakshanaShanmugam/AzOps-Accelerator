@@ -1,10 +1,17 @@
 on:
   workflow_call:
     inputs:
+
       
 runs:
   using: 'composite'
   steps:
+    - name: "Get Latest AzOps version"
+      shell: pwsh
+      run: |
+        write-host ${{env.modulesFolder}}
+        write-host ${{env.AZOPS_MODULE_VERSION}}
+        
     - name: "Dependencies"
       shell: pwsh
       run: |
