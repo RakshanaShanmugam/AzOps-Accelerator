@@ -17,7 +17,8 @@ runs:
         # Write-Host "##vso[task.setvariable variable=AZOPS_MODULE_VERSION;]$latestVersionId"
         # Write-Host ::set-env name=AZOPS_MODULE_VERSION::$latestVersionId
         echo "AZOPS_MODULE_VERSION=$latestVersionId" >> $GITHUB_ENV
-      
+        echo $latestVersionId
+        write-host $AZOPS_MODULE_VERSION
         
     - name: "Dependencies"
       shell: pwsh
