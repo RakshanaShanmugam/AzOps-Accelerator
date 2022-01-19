@@ -134,7 +134,7 @@ jobs:
       - name: 'Run sharedsteps'
         uses: ./.github/.templates/sharedSteps
         with:
-          modulesFolder: '${{ github.workspace }}/Module'
+          # modulesFolder: '${{ github.workspace }}/Module'
           AZOPS_MODULE_VERSION: '${{ env.AZOPS_MODULE_VERSION }}'          
       #
       # Configure
