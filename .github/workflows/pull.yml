@@ -49,7 +49,7 @@ env:
   #
   # Credentials
   #
-  modulesFolder: $GITHUB_WORKSPACE
+  # modulesFolder: $GITHUB_WORKSPACE
   AZOPS_MODULE_VERSION: '1.0'
   ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
   ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
@@ -134,7 +134,7 @@ jobs:
       - name: 'Run sharedsteps'
         uses: ./.github/.templates/sharedSteps
         with:
-          modulesFolder: '${{ env.modulesFolder }}'
+          modulesFolder: '${{ github.workspace }}/Module'
           AZOPS_MODULE_VERSION: '${{ env.AZOPS_MODULE_VERSION }}'          
       #
       # Configure
