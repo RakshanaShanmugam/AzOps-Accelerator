@@ -15,13 +15,18 @@ runs:
         $latestVersionUri = "https://www.powershellgallery.com/api/v2/FindPackagesById()?id='AzOps'&`$filter=IsLatestVersion"
         $latestVersionId = (Invoke-RestMethod $latestVersionUri).properties.NormalizedVersion
         # Write-Host "##vso[task.setvariable variable=AZOPS_MODULE_VERSION;]$latestVersionId"
-        Write-Host ::set-env name=AZOPS_MODULE_VERSION::$latestVersionId
+        # Write-Host ::set-env name=AZOPS_MODULE_VERSION::$latestVersionId
+        echo "NOW=v$(date +'%Y%m%d.%H%M%S')" >> $GITHUB_ENV
       
         
     - name: "Dependencies"
       shell: pwsh
       run: |
-       Write-Host ${{env.AZOPS_MODULE_VERSION}}
+        Write-Host "OK" ${{env.AZOPS_MODULE_VERSION}}
+        Write-Host "ok1" $GITHUB_ENV
+        Write-Host "ok2" ${{env.GITHUB_ENV}}
+        Write-Host "ok3" ${{env.NOW}}
+        Write-Host "ok4" $NOW
         Install-Module -Name "AzOps" -Force
       #
       # Connect
