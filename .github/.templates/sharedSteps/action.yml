@@ -7,6 +7,7 @@ runs:
   using: 'composite'
   steps:
     - name: "Get Latest AzOps version"
+      id: AzOpsversion
       if: ${{ env.AZOPS_MODULE_VERSION == '' }}
       shell: pwsh
       run: |
@@ -20,11 +21,15 @@ runs:
         echo $latestVersionId
         write-host ${AZOPS_MODULE_VERSION}
         Write-Host "OK" ${{env.AZOPS_MODULE_VERSION}}
-        Write-Host  "${Env:AZOPS_MODULE_VERSION}"
+        Write-Host "${Env:AZOPS_MODULE_VERSION}"
+        echo '::set-output name=AZOPS_MODULE_VERSION::$latestVersionId'
+        
+
         
     - name: "Dependencies"
       shell: pwsh
       run: |
+        echo ${{ steps.AzOpsversion.outputs.AZOPS_MODULE_VERSION }}"
         Write-Host  "${Env:AZOPS_MODULE_VERSION}"
         Write-Host "OK" ${AZOPS_MODULE_VERSION}
         Write-Host "OK" ${{env.AZOPS_MODULE_VERSION}}
