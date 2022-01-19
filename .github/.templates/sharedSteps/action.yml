@@ -16,14 +16,14 @@ runs:
         $latestVersionId = (Invoke-RestMethod $latestVersionUri).properties.NormalizedVersion
         # Write-Host "##vso[task.setvariable variable=AZOPS_MODULE_VERSION;]$latestVersionId"
         # Write-Host ::set-env name=AZOPS_MODULE_VERSION::$latestVersionId
-        echo "AZOPS_MODULE_VERSION=$latestVersionId" >> $GITHUB_ENV
+        echo "AZOPS_MODULE_VERSION=${latestVersionId}" >> ${GITHUB_ENV}
       
         
     - name: "Dependencies"
       shell: pwsh
       run: |
         Write-Host "OK" ${{env.AZOPS_MODULE_VERSION}}
-        Write-Host "ok1" $GITHUB_ENV
+        Write-Host "ok1" ${GITHUB_ENV}
         Write-Host "ok2" ${{env.GITHUB_ENV}}
         Write-Host "ok3" ${{env.AZOPS_MODULE_VERSION}}
         Write-Host "ok3" $AZOPS_MODULE_VERSION
