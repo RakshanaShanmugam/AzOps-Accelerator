@@ -7,14 +7,21 @@ runs:
   using: 'composite'
   steps:
     - name: "Get Latest AzOps version"
+      if: ${{ env.AZOPS_MODULE_VERSION == '' }}
       shell: pwsh
       run: |
         write-host '${{ github.workspace }}/Module'
         write-host ${{env.AZOPS_MODULE_VERSION}}
+        $latestVersionUri = "https://www.powershellgallery.com/api/v2/FindPackagesById()?id='AzOps'&`$filter=IsLatestVersion"
+        $latestVersionId = (Invoke-RestMethod $latestVersionUri).properties.NormalizedVersion
+        # Write-Host "##vso[task.setvariable variable=AZOPS_MODULE_VERSION;]$latestVersionId"
+        Write-Host ::set-env name=AZOPS_MODULE_VERSION::$latestVersionId
+      
         
     - name: "Dependencies"
       shell: pwsh
       run: |
+       Write-Host ${{env.AZOPS_MODULE_VERSION}}
         Install-Module -Name "AzOps" -Force
       #
       # Connect
