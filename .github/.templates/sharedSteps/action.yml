@@ -18,7 +18,8 @@ runs:
         # Write-Host ::set-env name=AZOPS_MODULE_VERSION::$latestVersionId
         echo "AZOPS_MODULE_VERSION=$latestVersionId" >> $GITHUB_ENV
         echo $latestVersionId
-        write-host $AZOPS_MODULE_VERSION
+        write-host ${AZOPS_MODULE_VERSION}
+        Write-Host "OK" ${{env.AZOPS_MODULE_VERSION}}
         
     - name: "Dependencies"
       shell: pwsh
