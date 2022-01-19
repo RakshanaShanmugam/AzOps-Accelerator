@@ -20,10 +20,12 @@ runs:
         echo $latestVersionId
         write-host ${AZOPS_MODULE_VERSION}
         Write-Host "OK" ${{env.AZOPS_MODULE_VERSION}}
+        Write-Host  "${Env:AZOPS_MODULE_VERSION}"
         
     - name: "Dependencies"
       shell: pwsh
       run: |
+        Write-Host  "${Env:AZOPS_MODULE_VERSION}"
         Write-Host "OK" ${AZOPS_MODULE_VERSION}
         Write-Host "OK" ${{env.AZOPS_MODULE_VERSION}}
         Write-Host "ok3" $AZOPS_MODULE_VERSION
