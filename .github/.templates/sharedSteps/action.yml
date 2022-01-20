@@ -27,7 +27,7 @@ runs:
       shell: pwsh
       run: |
         $modulesFolder = '${{ github.workspace }}/Module'
-        write-host '${{ github.workspace }}/Module'
+        write-host $modulesFolder
 
     - name: "Dependencies"
       shell: pwsh
