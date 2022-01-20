@@ -26,8 +26,8 @@ runs:
       if: ${{ env.AZOPS_MODULE_VERSION == '' || steps.cache-AzOps.outputs.cache-hit != 'true' }}
       shell: pwsh
       run: |
-        $modulesFolder= ${{ github.workspace }} + "/Module"
-        write-host "Path="$modulesFolder
+        $modulesFolder = '${{ github.workspace }}/Module'
+        write-host '${{ github.workspace }}/Module'
 
     - name: "Dependencies"
       shell: pwsh
