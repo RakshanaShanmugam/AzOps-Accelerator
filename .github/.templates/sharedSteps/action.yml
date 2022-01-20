@@ -14,15 +14,6 @@ runs:
         $latestVersionId = (Invoke-RestMethod $latestVersionUri).properties.NormalizedVersion
         echo "MODULE_VERSION=$latestVersionId" | Out-File -FilePath $Env:GITHUB_ENV -Encoding utf-8 -Append
 
-    - name: Cache AzOps module
-      if: ${{ env.MODULE_VERSION != '' }}
-      id: cache-AzOps
-      uses: actions/cache@v2
-      with:
-        path: '${{ github.workspace }}/Module'
-        key: '"AzOpsModule" | ${{env.MODULE_VERSION}}'
-
-   
     - name: "Dependencies"
       shell: pwsh
       run: |
