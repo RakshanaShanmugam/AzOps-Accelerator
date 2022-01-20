@@ -24,7 +24,7 @@ runs:
     
     - name: "Dependencies1"
     
-      if:  ${{ (env.AZOPS_MODULE_VERSION == '') || (steps.cache-AzOps.outputs.cache-hit != 'true') }} # ${{ env.AZOPS_MODULE_VERSION == '' }} # || steps.cache-AzOps.outputs.cache-hit != 'true' 
+      if: env.AZOPS_MODULE_VERSION == '' || steps.cache-AzOps.outputs.cache-hit != 'true' # ${{ env.AZOPS_MODULE_VERSION == '' }} # || steps.cache-AzOps.outputs.cache-hit != 'true' 
       shell: pwsh
       run: |
         write-host ${{ steps.cache.outputs.cache-hit }}
