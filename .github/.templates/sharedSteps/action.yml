@@ -17,19 +17,24 @@ runs:
         $latestVersionId = (Invoke-RestMethod $latestVersionUri).properties.NormalizedVersion
         # Write-Host "##vso[task.setvariable variable=AZOPS_MODULE_VERSION;]$latestVersionId"
         # Write-Host ::set-env name=AZOPS_MODULE_VERSION::$latestVersionId
-        # echo "AZOPS_MODULE_VERSION=$latestVersionId" >> $GITHUB_ENV
+         echo "AZOPS_MODULE_VERSION=$latestVersionId" | Out-File -FilePath $Env:GITHUB_ENV -Encoding utf-8 -Append
         # echo $latestVersionId
         # write-host ${AZOPS_MODULE_VERSION}
         # Write-Host "OK" ${{env.AZOPS_MODULE_VERSION}}
         # Write-Host "${Env:AZOPS_MODULE_VERSION}"
-        echo '::set-output name=AZOPS_MODULE_VERSION::${env:latestVersionId}'
+        # echo '::set-output name=AZOPS_MODULE_VERSION::${env:latestVersionId}'
         
 
         
     - name: "Dependencies"
       shell: pwsh
       run: |
-          Install-Module -Name "AzOps" -Force
+        echo ${{ steps.AzOpsversion.outputs.AZOPS_MODULE_VERSION }}"
+        Write-Host  "${Env:AZOPS_MODULE_VERSION}"
+        Write-Host "OK" ${AZOPS_MODULE_VERSION}
+        Write-Host "OK" ${{env.AZOPS_MODULE_VERSION}}
+        Write-Host "ok3" $AZOPS_MODULE_VERSION
+        Install-Module -Name "AzOps" -Force
       #
       # Connect
       # Authenticate Azure context
