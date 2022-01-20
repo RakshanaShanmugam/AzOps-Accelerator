@@ -38,8 +38,8 @@ runs:
           Path            = $modulesFolder
           Force           = $true
         }
-        write-host $params
-        
+        $params
+
     - name: "Dependencies"
       shell: pwsh
       run: |
