@@ -23,7 +23,7 @@ runs:
         key: '"AzOpsModule" | ${{env.MODULE_VERSION}}'
     
     - name: "Dependencies1"
-      if: ${{ env.AZOPS_MODULE_VERSION == '' || steps.cache-AzOps.outputs.cache-hit != 'true' }}
+      if: ${{ env.AZOPS_MODULE_VERSION == '' }} || steps.cache-AzOps.outputs.cache-hit != 'true' 
       shell: pwsh
       run: |
         write-host ${{ steps.cache.outputs.cache-hit }}
