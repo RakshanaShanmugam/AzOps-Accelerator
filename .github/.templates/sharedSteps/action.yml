@@ -16,16 +16,7 @@ runs:
         # Write-Host "##vso[task.setvariable variable=AZOPS_MODULE_VERSION;]$latestVersionId"
         # Write-Host ::set-env name=AZOPS_MODULE_VERSION::$latestVersionId
          echo "AZOPS_MODULE_VERSION=$latestVersionId" | Out-File -FilePath $Env:GITHUB_ENV -Encoding utf-8 -Append
-         echo "MY_VARIABLE=hello" | Out-File -FilePath $Env:GITHUB_ENV -Encoding utf-8 -Append
-         echo $latestVersionId
-        Write-Host  ${Env:AZOPS_MODULE_VERSION}
-        Write-Host "OK" ${AZOPS_MODULE_VERSION}
-        Write-Host "OK" ${{env.AZOPS_MODULE_VERSION}}
-        Write-Host "ok3" $AZOPS_MODULE_VERSION
-        Write-Host  ${Env:MY_VARIABLE}
-        Write-Host "OK" ${MY_VARIABLE}
-        Write-Host "OK" ${{env.MY_VARIABLE}}
-        Write-Host "ok3" $MY_VARIABLE
+         echo "MY_VARIABLE=$latestVersionId" | Out-File -FilePath $Env:GITHUB_ENV -Encoding utf-8 -Append
         
 
         
@@ -33,13 +24,9 @@ runs:
       shell: pwsh
       run: |
         Write-Host  ${Env:AZOPS_MODULE_VERSION}
-        Write-Host "OK" ${AZOPS_MODULE_VERSION}
         Write-Host "OK" ${{env.AZOPS_MODULE_VERSION}}
-        Write-Host "ok3" $AZOPS_MODULE_VERSION
         Write-Host  ${Env:MY_VARIABLE}
-        Write-Host "OK" ${MY_VARIABLE}
         Write-Host "OK" ${{env.MY_VARIABLE}}
-        Write-Host "ok3" $MY_VARIABLE
 
         Install-Module -Name "AzOps" -Force
       #
