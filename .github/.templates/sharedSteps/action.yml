@@ -24,7 +24,7 @@ runs:
     
     - name: "Dependencies1"
     
-      if: env.MODULE_VERSION != '' || steps.cache-AzOps.outputs.cache-hit != 'true' # ${{ env.AZOPS_MODULE_VERSION == '' }} # || steps.cache-AzOps.outputs.cache-hit != 'true' 
+      if: env.MODULE_VERSION == '' || steps.cache-AzOps.outputs.cache-hit != 'true' # ${{ env.AZOPS_MODULE_VERSION == '' }} # || steps.cache-AzOps.outputs.cache-hit != 'true' 
       shell: pwsh
       run: |
         $modulesFolder = '${{ github.workspace }}/Module'
