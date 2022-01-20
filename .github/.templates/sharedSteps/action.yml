@@ -33,7 +33,13 @@ runs:
         if(-not (Test-Path -Path $modulesFolder)) {
         mkdir $modulesFolder
         }
-
+        $params = @{
+          Name            = 'AzOps'
+          Path            = $modulesFolder
+          Force           = $true
+        }
+        write-host $params
+        
     - name: "Dependencies"
       shell: pwsh
       run: |
