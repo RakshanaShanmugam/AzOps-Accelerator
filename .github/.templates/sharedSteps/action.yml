@@ -7,7 +7,7 @@ runs:
   using: 'composite'
   steps:
     - name: "Get Latest AzOps version"
-      if: ${{ env.MODULE_VERSION == '' }}
+      if: ${{ env.AZOPS_MODULE_VERSION == '' }}
       shell: pwsh
       run: |
         write-host ${{ env.AZOPS_MODULE_VERSION }}
