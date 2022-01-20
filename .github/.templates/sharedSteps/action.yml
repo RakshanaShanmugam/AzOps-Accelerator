@@ -28,6 +28,7 @@ runs:
       run: |
         $modulesFolder = '${{ github.workspace }}/Module'
         write-host $modulesFolder
+        Get-ChildItem -Path $modulesFolder
         if(-not (Test-Path -Path $modulesFolder)) {
         mkdir $modulesFolder
         }
