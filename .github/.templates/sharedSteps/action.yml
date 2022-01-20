@@ -55,3 +55,5 @@ runs:
       shell: pwsh
       run: |
         $Env:PSModulePath
+        $Env:PSModulePath = $Env:PSModulePath, '${{ github.workspace }}/Module' -join [IO.Path]::PathSeparator
+        $Env:PSModulePath
