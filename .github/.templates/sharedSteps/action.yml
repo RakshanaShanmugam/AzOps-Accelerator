@@ -22,9 +22,8 @@ runs:
         path: '${{ github.workspace }}/Module'
         key: '"AzOpsModule" | ${{env.MODULE_VERSION}}'
     
-    - name: "Dependencies1"
-    
-      if: env.MODULE_VERSION != '' || steps.cache-AzOps.outputs.cache-hit != 'true' # ${{ env.AZOPS_MODULE_VERSION == '' }} # || steps.cache-AzOps.outputs.cache-hit != 'true' 
+    - name: "Dependencies"
+      if: env.MODULE_VERSION == '' || steps.cache-AzOps.outputs.cache-hit != 'true' 
       shell: pwsh
       run: |
         $modulesFolder = '${{ github.workspace }}/Module'
@@ -55,5 +54,6 @@ runs:
     - name: "Connect"
       shell: pwsh
       run: |
+        $Env:PSModulePath = $Env:PSModulePath, '${{ github.workspace }}/Module' -join [IO.Path]::PathSeparator
         $credential = New-Object PSCredential -ArgumentList ${{env.ARM_CLIENT_ID}}, (ConvertTo-SecureString -String ${{env.ARM_CLIENT_SECRET}} -AsPlainText -Force)
         Connect-AzAccount -TenantId ${{env.ARM_TENANT_ID}} -ServicePrincipal -Credential $credential -SubscriptionId ${{env.ARM_SUBSCRIPTION_ID}}
