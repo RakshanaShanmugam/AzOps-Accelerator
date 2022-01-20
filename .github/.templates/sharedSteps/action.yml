@@ -54,7 +54,6 @@ runs:
     - name: "Connect"
       shell: pwsh
       run: |
-        $Env:PSModulePath
         $Env:PSModulePath = $Env:PSModulePath, '${{ github.workspace }}/Module' -join [IO.Path]::PathSeparator
-        $Env:PSModulePath
-        Get-ChildItem -Path '${{ github.workspace }}/Module'
+        $credential = New-Object PSCredential -ArgumentList ${{env.ARM_CLIENT_ID}}, (ConvertTo-SecureString -String ${{env.ARM_CLIENT_SECRET}} -AsPlainText -Force)
+        Connect-AzAccount -TenantId ${{env.ARM_TENANT_ID}} -ServicePrincipal -Credential $credential -SubscriptionId ${{env.ARM_SUBSCRIPTION_ID}}
