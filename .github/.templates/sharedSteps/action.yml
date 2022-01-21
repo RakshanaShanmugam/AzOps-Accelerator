@@ -20,14 +20,14 @@ runs:
       id: cache-AzOps
       uses: actions/cache@v2
       with:
-        path: '${{ github.workspace }}/Modules'
+        path: '$Env:RUNNER_TOOL_CACHE/Modules'
         key: '"AzOpsModule" | ${{env.MODULE_VERSION}}'
     
     - name: "Dependencies"
       if: env.MODULE_VERSION != '' || steps.cache-AzOps.outputs.cache-hit != 'true' 
       shell: pwsh
       run: |
-        $modulesFolder = '${{ github.workspace }}/Modules'
+        $modulesFolder = '$Env:RUNNER_TOOL_CACHE/Modules'
         write-host $modulesFolder
         if(-not (Test-Path -Path $modulesFolder)) {
         mkdir $modulesFolder
