@@ -23,7 +23,7 @@ runs:
         key: '"AzOpsModule" | ${{env.MODULE_VERSION}}'
     
     - name: "Dependencies"
-      if: env.MODULE_VERSION == '' || steps.cache-AzOps.outputs.cache-hit != 'true' 
+      if: env.MODULE_VERSION != '' || steps.cache-AzOps.outputs.cache-hit != 'true' 
       shell: pwsh
       run: |
         $modulesFolder = '${{ github.workspace }}/Module'
