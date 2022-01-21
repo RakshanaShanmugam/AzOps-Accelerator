@@ -20,14 +20,14 @@ runs:
       id: cache-AzOps
       uses: actions/cache@v2
       with:
-        path: '$Env:RUNNER_TOOL_CACHE/Modules'
+        path: '${{ RUNNER_TOOL_CACHE }}/Modules'
         key: '"AzOpsModule" | ${{env.MODULE_VERSION}}'
     
     - name: "Dependencies"
       if: env.MODULE_VERSION != '' || steps.cache-AzOps.outputs.cache-hit != 'true' 
       shell: pwsh
       run: |
-        $modulesFolder = '$Env:RUNNER_TOOL_CACHE/Modules'
+        $modulesFolder = '${{ RUNNER_TOOL_CACHE }}/Modules'
         write-host $modulesFolder
         if(-not (Test-Path -Path $modulesFolder)) {
         mkdir $modulesFolder
@@ -55,6 +55,6 @@ runs:
     - name: "Connect"
       shell: pwsh
       run: |
-        $Env:PSModulePath = $Env:PSModulePath, '${{ github.workspace }}/Modules' -join [IO.Path]::PathSeparator
+        $Env:PSModulePath = $Env:PSModulePath, '${{ RUNNER_TOOL_CACHE }}/Modules' -join [IO.Path]::PathSeparator
         $credential = New-Object PSCredential -ArgumentList ${{env.ARM_CLIENT_ID}}, (ConvertTo-SecureString -String ${{env.ARM_CLIENT_SECRET}} -AsPlainText -Force)
         Connect-AzAccount -TenantId ${{env.ARM_TENANT_ID}} -ServicePrincipal -Credential $credential -SubscriptionId ${{env.ARM_SUBSCRIPTION_ID}}
