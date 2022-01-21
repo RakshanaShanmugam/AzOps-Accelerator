@@ -186,6 +186,7 @@ jobs:
       - name: "Initialize"
         shell: pwsh
         run: |
+          $Env:PSModulePath = $Env:PSModulePath, '${{ github.workspace }}/Modules' -join [IO.Path]::PathSeparator
           Import-PSFConfig -Path settings.json -Schema MetaJson -EnableException
           if ($env:ACTION -eq "Enterprise-Scale Deployment") {
             Set-PSFConfig -FullName AzOps.Core.SkipResource -Value $false
