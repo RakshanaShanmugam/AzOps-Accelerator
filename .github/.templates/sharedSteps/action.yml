@@ -1,3 +1,5 @@
+name: "Shared Steps"
+
 on:
   workflow_call:
 
