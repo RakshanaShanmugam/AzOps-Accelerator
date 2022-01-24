@@ -3,9 +3,6 @@ name: "Shared Steps"
 on:
   workflow_call:
 
-env:
-  modulesFolder: '~/.local/share/powershell/Modules'
-
 runs:
   using: 'composite'
   steps:
