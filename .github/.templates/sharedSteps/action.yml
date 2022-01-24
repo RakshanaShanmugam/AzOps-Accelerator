@@ -48,7 +48,7 @@ runs:
         if(!$moduleversion) {
           $params.RequiredVersion = '${{env.MODULE_VERSION}}'
         }
-        else if(!$azopsmoduleversion)
+        elseif(!$azopsmoduleversion)
         {
         $params.RequiredVersion = '${{env.AZOPS_MODULE_VERSION}}'
         }
