@@ -1,8 +1,6 @@
 on:
   workflow_call:
-    inputs:
 
-      
 runs:
   using: 'composite'
   steps:
@@ -13,7 +11,11 @@ runs:
         $latestVersionUri = "https://www.powershellgallery.com/api/v2/FindPackagesById()?id='AzOps'&`$filter=IsLatestVersion"
         $latestVersionId = (Invoke-RestMethod $latestVersionUri).properties.NormalizedVersion
         echo "MODULE_VERSION=$latestVersionId" | Out-File -FilePath $Env:GITHUB_ENV -Encoding utf-8 -Append
-        
+
+    #
+    # Cache Dependencies
+    # Cache dependencies if version has not changed
+    #  
     - name: Cache AzOps module
       if: ${{ env.MODULE_VERSION != '' }}
       id: cache-AzOps
@@ -22,6 +24,10 @@ runs:
         path: "~/.local/share/powershell/Modules"
         key: '"AzOpsModule" | ${{env.MODULE_VERSION}}'
     
+    #
+    # Dependencies
+    # Install required runtime modules
+    #
     - name: "Dependencies"
       if: env.MODULE_VERSION != '' || steps.cache-AzOps.outputs.cache-hit != 'true' 
       shell: pwsh
@@ -41,11 +47,6 @@ runs:
         }
         Save-Module @params
 
-      # - name: "Dependencies"
-      #   shell: pwsh
-      #   run: |
-      #     Write-Host "OK" ${{env.MODULE_VERSION}}
-      #     Install-Module -Name "AzOps" -Force
       #
       # Connect
       # Authenticate Azure context
