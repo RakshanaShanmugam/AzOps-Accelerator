@@ -42,7 +42,8 @@ runs:
           Path            = '${{ env.modulesFolder }}'
           Force           = $true
         }
-        if(${{env.MODULE_VERSION}}) {
+        Write-Host "test"
+        if(${{env.MODULE_VERSION}} -or ${{env.AZOPS_MODULE_VERSION}}) {
           $params.RequiredVersion = '${{env.MODULE_VERSION}}'
         }
         Save-Module @params
