@@ -43,8 +43,12 @@ runs:
           Force           = $true
         }
         Write-Host "test"
-        if(${{env.MODULE_VERSION}} -or ${{env.AZOPS_MODULE_VERSION}}) {
+        if(!${{env.MODULE_VERSION}}) {
           $params.RequiredVersion = '${{env.MODULE_VERSION}}'
+        }
+        else if(!${{env.AZOPS_MODULE_VERSION}})
+        {
+        $params.RequiredVersion = '${{env.AZOPS_MODULE_VERSION}}'
         }
         Save-Module @params
 
