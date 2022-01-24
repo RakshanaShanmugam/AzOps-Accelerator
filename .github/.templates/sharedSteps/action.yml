@@ -34,13 +34,12 @@ runs:
       if: env.MODULE_VERSION != '' || steps.cache-AzOps.outputs.cache-hit != 'true' 
       shell: pwsh
       run: |
-        #$modulesFolder = "~/.local/share/powershell/Modules"
         if(-not (Test-Path -Path ${{ env.modulesFolder }})) {
         mkdir ${{ env.modulesFolder }}
         }
         $params = @{
           Name            = 'AzOps'
-          Path            = ${{ env.modulesFolder }}
+          Path            = '${{ env.modulesFolder }}'
           Force           = $true
         }
         if(${{env.MODULE_VERSION}}) {
