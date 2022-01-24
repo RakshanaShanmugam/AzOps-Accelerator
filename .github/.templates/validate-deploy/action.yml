@@ -1,3 +1,5 @@
+name: "Validate or Deploy"
+
 on:
   workflow_call:
     inputs:
@@ -9,6 +11,11 @@ on:
 runs:
   using: 'composite'
   steps:
+      #
+      # Diff
+      # List index changes
+      #
+      
       - name: "Diff"
         shell: bash
         run: |
@@ -29,7 +36,7 @@ runs:
       # Initial deployment of any index changes
       #
 
-      - name: ${{ inputs.name }}
+      - name: ${{ input.name }}
         shell: pwsh
         run: |
           Import-PSFConfig -Path settings.json -Schema MetaJson -EnableException
