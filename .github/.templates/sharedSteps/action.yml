@@ -34,7 +34,7 @@ runs:
       if: env.MODULE_VERSION != '' || steps.cache-AzOps.outputs.cache-hit != 'true' 
       shell: pwsh
       run: |
-        if(-not (Test-Path -Path ${{ env.modulesFolder }})) {
+        if(-not (Test-Path -Path '${{ env.modulesFolder }}')) {
         mkdir ${{ env.modulesFolder }}
         }
         $params = @{
