@@ -31,7 +31,7 @@ runs:
     # Install required runtime modules
     #
     - name: "Dependencies"
-      if: env.MODULE_VERSION != '' || steps.cache-AzOps.outputs.cache-hit != 'true' 
+      if: env.MODULE_VERSION == '' || steps.cache-AzOps.outputs.cache-hit != 'true' 
       shell: pwsh
       run: |
         if(-not (Test-Path -Path '${{ env.modulesFolder }}')) {
