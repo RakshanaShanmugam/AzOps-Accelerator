@@ -3,6 +3,9 @@ name: "Shared Steps"
 on:
   workflow_call:
 
+env:
+  modulesFolder: '~/.local/share/powershell/Modules'
+
 runs:
   using: 'composite'
   steps:
@@ -23,7 +26,7 @@ runs:
       id: cache-AzOps
       uses: actions/cache@v2
       with:
-        path: "~/.local/share/powershell/Modules"
+        path: ${{ env.modulesFolder }}
         key: '"AzOpsModule" | ${{env.MODULE_VERSION}}'
     
     #
@@ -34,14 +37,13 @@ runs:
       if: env.MODULE_VERSION != '' || steps.cache-AzOps.outputs.cache-hit != 'true' 
       shell: pwsh
       run: |
-        $modulesFolder = "~/.local/share/powershell/Modules"
-        write-host $modulesFolder
-        if(-not (Test-Path -Path $modulesFolder)) {
-        mkdir $modulesFolder
+        #$modulesFolder = "~/.local/share/powershell/Modules"
+        if(-not (Test-Path -Path ${{ env.modulesFolder }})) {
+        mkdir ${{ env.modulesFolder }}
         }
         $params = @{
           Name            = 'AzOps'
-          Path            = $modulesFolder
+          Path            = ${{ env.modulesFolder }}
           Force           = $true
         }
         if(${{env.MODULE_VERSION}}) {
@@ -57,6 +59,6 @@ runs:
     - name: "Connect"
       shell: pwsh
       run: |
-        $Env:PSModulePath = $Env:PSModulePath, "~/.local/share/powershell/Modules" -join [IO.Path]::PathSeparator
+        $Env:PSModulePath = $Env:PSModulePath, ${{ env.modulesFolder }} -join [IO.Path]::PathSeparator
         $credential = New-Object PSCredential -ArgumentList ${{env.ARM_CLIENT_ID}}, (ConvertTo-SecureString -String ${{env.ARM_CLIENT_SECRET}} -AsPlainText -Force)
         Connect-AzAccount -TenantId ${{env.ARM_TENANT_ID}} -ServicePrincipal -Credential $credential -SubscriptionId ${{env.ARM_SUBSCRIPTION_ID}}
