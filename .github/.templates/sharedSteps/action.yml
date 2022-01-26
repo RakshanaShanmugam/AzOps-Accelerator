@@ -23,7 +23,7 @@ runs:
       uses: actions/cache@v2
       with:
         path: ${{ env.modulesFolder }}
-        key: '"AzOpsModule" | ( ${{env.MODULE_VERSION}}' || ${{env.AZOPS_MODULE_VERSION}}' )
+        key: '"AzOpsModule" | ('${{env.MODULE_VERSION}}' || '${{env.AZOPS_MODULE_VERSION}}')'
         
     #
     # Dependencies
