@@ -21,7 +21,7 @@ runs:
           Write-Host "my azops"
           $azopsmoduleversion = '${{env.AZOPS_MODULE_VERSION}}'
           Write-Host $azopsmoduleversion
-          echo "::set-output name=MODULE_VERSION::$azopsmoduleversion"
+          # echo "::set-output name=MODULE_VERSION::$azopsmoduleversion"
         }
         
 
