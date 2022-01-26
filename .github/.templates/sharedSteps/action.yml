@@ -21,49 +21,6 @@ runs:
           Write-Host "my azops"
           $azopsmoduleversion = '${{env.AZOPS_MODULE_VERSION}}'
           Write-Host $azopsmoduleversion
-          # echo "::set-output name=MODULE_VERSION::$azopsmoduleversion"
+          echo "::set-output name=MODULE_VERSION::$azopsmoduleversion"
         }
         
-
-    #
-    # Cache Dependencies
-    # Cache dependencies if version has not changed
-    #  
-    - name: Cache AzOps module
-      if: ${{ steps.version.outputs.MODULE_VERSION != '' }}
-      id: cache-AzOps
-      uses: actions/cache@v2
-      with:
-        path: ${{ env.modulesFolder }}
-        key: '"AzOpsModule" | ${{ steps.version.outputs.MODULE_VERSION }}'
-    
-    #
-    # Dependencies
-    # Install required runtime modules
-    #
-    - name: "Dependencies"
-      if: steps.version.outputs.MODULE_VERSION == '' || steps.cache-AzOps.outputs.cache-hit != 'true' 
-      shell: pwsh
-      run: |
-        if(-not (Test-Path -Path "${{ env.modulesFolder }}")) {
-        mkdir ${{ env.modulesFolder }}
-        }
-        $params = @{
-          Name            = 'AzOps'
-          Path            = '${{ env.modulesFolder }}'
-          Force           = $true
-        }
-        $params.RequiredVersion = '${{ steps.version.outputs.MODULE_VERSION }}'        
-        Save-Module @params
-
-      #
-      # Connect
-      # Authenticate Azure context
-      #
-
-    - name: "Connect"
-      shell: pwsh
-      run: |
-        $Env:PSModulePath = $Env:PSModulePath, '${{ env.modulesFolder }}' -join [IO.Path]::PathSeparator
-        $credential = New-Object PSCredential -ArgumentList ${{env.ARM_CLIENT_ID}}, (ConvertTo-SecureString -String ${{env.ARM_CLIENT_SECRET}} -AsPlainText -Force)
-        Connect-AzAccount -TenantId ${{env.ARM_TENANT_ID}} -ServicePrincipal -Credential $credential -SubscriptionId ${{env.ARM_SUBSCRIPTION_ID}}
