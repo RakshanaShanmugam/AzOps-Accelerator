@@ -50,7 +50,6 @@ env:
   # Credentials
   #
   AZOPS_MODULE_VERSION: ${{ secrets.AZOPS_MODULE_VERSION }}
-  modulesFolder: "~/.local/share/powershell/Modules"
   ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
   ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
   ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
