@@ -9,7 +9,7 @@ runs:
     - name: "Get Latest AzOps version"
       shell: pwsh
       run: |
-          $azopsmoduleversion = ${{env.AZOPS_MODULE_VERSION}}
+          $azopsmoduleversion = '${{env.AZOPS_MODULE_VERSION}}'
         if(!$azopsmoduleversion) {
           $latestVersionUri = "https://www.powershellgallery.com/api/v2/FindPackagesById()?id='AzOps'&`$filter=IsLatestVersion"
           $latestVersionId = (Invoke-RestMethod $latestVersionUri).properties.NormalizedVersion
