@@ -16,7 +16,7 @@ runs:
           Write-Host "latest"
           echo "MODULE_VERSION=$latestVersionId" | Out-File -FilePath $Env:GITHUB_ENV -Encoding utf-8 -Append
         }
-        else {
+        elseif(${{ env.AZOPS_MODULE_VERSION }}) {
           Write-Host "my version"
           $azopsmoduleversion = ${{env.AZOPS_MODULE_VERSION}}
           echo "MODULE_VERSION=$azopsmoduleversion" | Out-File -FilePath $Env:GITHUB_ENV -Encoding utf-8 -Append
