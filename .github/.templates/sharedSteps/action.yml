@@ -19,7 +19,7 @@ runs:
     # Cache dependencies if version has not changed
     #  
     - name: Cache AzOps module
-      if: env.MODULE_VERSION != '' || env.AZOPS_MODULE_VERSION == ''
+      if: env.MODULE_VERSION != '' || env.AZOPS_MODULE_VERSION != ''
       id: cache-AzOps
       uses: actions/cache@v2
       with:
