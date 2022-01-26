@@ -43,11 +43,11 @@ runs:
           Force           = $true
         }
         Write-Host "test"
-        if( ${{ ! env.MODULE_VERSION }} ) {
+        if(!env.MODULE_VERSION) {
           Write-Host "MODULE_VERSION"
           $params.RequiredVersion = '${{env.MODULE_VERSION}}'
         }
-        elseif( ${{ ! env.AZOPS_MODULE_VERSION }} )
+        elseif(!env.AZOPS_MODULE_VERSION)
         {
         Write-Host "AZOPS_MODULE_VERSION"
         $params.RequiredVersion = '${{env.AZOPS_MODULE_VERSION}}'
