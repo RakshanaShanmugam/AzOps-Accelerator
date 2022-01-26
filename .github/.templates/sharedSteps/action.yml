@@ -7,7 +7,6 @@ runs:
   using: 'composite'
   steps:
     - name: "Get Latest AzOps version"
-      id: version
       shell: pwsh
       run: |
         if(${{ ! env.AZOPS_MODULE_VERSION }})
