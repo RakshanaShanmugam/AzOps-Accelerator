@@ -138,7 +138,7 @@ jobs:
       
       - name: 'Sharedsteps'
         with:
-            variableFileName: 'vars'
+            variableFileName: 'global.variables'
         uses: ./.github/.templates/sharedSteps
           
       #
