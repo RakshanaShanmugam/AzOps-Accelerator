@@ -15,8 +15,10 @@ runs:
           $latestVersionUri = "https://www.powershellgallery.com/api/v2/FindPackagesById()?id='AzOps'&`$filter=IsLatestVersion"
           $latestVersionId = (Invoke-RestMethod $latestVersionUri).properties.NormalizedVersion
           echo "::set-output name=MODULE_VERSION::$latestVersionId"
+          Write-Host "latest azops"
         }
         else {
+          Write-Host "my azops"
           echo "::set-output name=MODULE_VERSION::${{env.AZOPS_MODULE_VERSION}}"
         }
         
