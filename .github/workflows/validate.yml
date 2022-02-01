@@ -61,7 +61,7 @@ jobs:
       #
 
       - name: 'Validate'
-        uses: ./.github/.templates/validate-deploy
+        uses: ./.github/.templates/validate-deploy/action.yml
         with:
           deploy: false
           StageName: 'Validate'
