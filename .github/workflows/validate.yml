@@ -61,10 +61,10 @@ jobs:
       #
 
       - name: 'Validate'
+        uses: ./.github/.templates/validate-deploy
         with:
           deploy: false
           StageName: 'Validate'
-        uses: ./.github/.templates/validate-deploy
       
       #
       # Results
