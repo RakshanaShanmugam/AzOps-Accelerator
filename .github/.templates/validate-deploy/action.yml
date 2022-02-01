@@ -3,7 +3,7 @@ name: "Validate or Deploy"
 inputs:
   deploy:
     default: false
-  StageName:
+  name:
     required: true
 on:
   workflow_call:
@@ -31,13 +31,12 @@ runs:
             echo "The validation pipeline failed because there is currently no change to be processed"
             exit 1
           fi
-
       #
       # Deploy
       # Initial deployment of any index changes
       #
 
-      - name: ${{ inputs.StageName }}
+      - name: ${{ inputs.name }}
         shell: pwsh
         run: |
           Import-PSFConfig -Path settings.json -Schema MetaJson -EnableException
