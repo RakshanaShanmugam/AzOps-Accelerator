@@ -5,7 +5,7 @@ on:
     inputs:
       deploy:
         default: false
-      name:
+      StageName:
         required: true
 
 runs:
@@ -36,7 +36,7 @@ runs:
       # Initial deployment of any index changes
       #
 
-      - name: ${{ inputs.name }}
+      - name: ${{ inputs.StageName }}
         shell: pwsh
         run: |
           Import-PSFConfig -Path settings.json -Schema MetaJson -EnableException
