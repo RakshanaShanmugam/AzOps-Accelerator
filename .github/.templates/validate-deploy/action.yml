@@ -2,11 +2,11 @@ name: "Validate or Deploy"
 
 on:
   workflow_call:
-    inputs:
-      deploy:
-        default: false
-      StageName:
-        required: true
+  inputs:
+    deploy:
+      default: false
+    StageName:
+      required: true
 
 runs:
   using: 'composite'
