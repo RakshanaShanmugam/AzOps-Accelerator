@@ -1,13 +1,13 @@
 name: "Validate or Deploy"
 
+inputs:
+  deploy:
+    default: false
+  StageName:
+    required: true
 on:
   workflow_call:
-  inputs:
-    deploy:
-      default: false
-    StageName:
-      required: true
-
+  
 runs:
   using: 'composite'
   steps:
