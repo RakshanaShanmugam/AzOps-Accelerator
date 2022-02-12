@@ -8,6 +8,9 @@ on:
   #
 
   workflow_dispatch:
+    inputs:
+      id:
+        default: 'runigit'
 
   #
   # Repository Dispatch
