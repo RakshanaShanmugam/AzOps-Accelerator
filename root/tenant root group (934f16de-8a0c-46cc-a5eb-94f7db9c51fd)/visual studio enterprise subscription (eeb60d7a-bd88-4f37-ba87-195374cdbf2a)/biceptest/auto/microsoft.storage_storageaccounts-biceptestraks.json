@@ -47,7 +47,7 @@
           },
           "keySource": "Microsoft.Storage"
         },
-        "accessTier": "Hot"
+        "accessTier": "Cool"
       }
     }
   ],
