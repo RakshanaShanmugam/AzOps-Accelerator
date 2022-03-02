@@ -40,7 +40,7 @@
         "perSiteScaling": false,
         "elasticScaleEnabled": false,
         "maximumElasticWorkerCount": 1,
-        "numberOfSites": 0,
+        "numberOfSites": 1,
         "hostingEnvironmentId": null,
         "isSpot": false,
         "spotExpirationTime": null,
