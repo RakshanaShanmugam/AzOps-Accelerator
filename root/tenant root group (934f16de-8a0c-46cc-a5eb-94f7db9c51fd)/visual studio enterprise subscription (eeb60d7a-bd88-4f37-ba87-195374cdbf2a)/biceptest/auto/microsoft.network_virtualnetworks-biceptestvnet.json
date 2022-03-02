@@ -29,6 +29,14 @@
               "ipConfigurations": [
                 {}
               ],
+              "serviceEndpoints": [
+                {
+                  "service": "Microsoft.KeyVault",
+                  "locations": [
+                    "*"
+                  ]
+                }
+              ],
               "delegations": [],
               "privateEndpointNetworkPolicies": "Enabled",
               "privateLinkServiceNetworkPolicies": "Enabled"
