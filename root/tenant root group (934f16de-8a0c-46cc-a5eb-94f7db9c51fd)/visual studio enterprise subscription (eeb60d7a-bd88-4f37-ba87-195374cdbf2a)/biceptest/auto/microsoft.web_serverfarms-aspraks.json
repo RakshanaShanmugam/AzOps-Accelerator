@@ -57,7 +57,7 @@
         "webSiteId": null,
         "existingServerFarmIds": null,
         "kubeEnvironmentProfile": null,
-        "zoneRedundant": true
+        "zoneRedundant": false
       }
     }
   ],
