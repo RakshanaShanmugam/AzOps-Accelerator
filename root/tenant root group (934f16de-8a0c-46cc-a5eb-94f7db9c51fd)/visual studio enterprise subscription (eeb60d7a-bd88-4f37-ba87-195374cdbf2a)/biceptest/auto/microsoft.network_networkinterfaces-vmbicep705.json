@@ -20,7 +20,7 @@
           {
             "name": "ipconfig1",
             "id": "/subscriptions/eeb60d7a-bd88-4f37-ba87-195374cdbf2a/resourceGroups/biceptest/providers/Microsoft.Network/networkInterfaces/vmbicep705/ipConfigurations/ipconfig1",
-            "etag": "W/\"b9a7573a-c7cf-499b-8ae4-4311719c795a\"",
+            "etag": "W/\"8fab559b-484c-4bd7-a8b6-1c2842e2b762\"",
             "type": "Microsoft.Network/networkInterfaces/ipConfigurations",
             "properties": {
               "provisioningState": "Succeeded",
@@ -36,8 +36,7 @@
         ],
         "dnsSettings": {
           "dnsServers": [],
-          "appliedDnsServers": [],
-          "internalDomainNameSuffix": "peiq5kd4vxmulc10zrc0lo14mh.fx.internal.cloudapp.net"
+          "appliedDnsServers": []
         },
         "macAddress": "00-0D-3A-DC-FD-06",
         "enableAcceleratedNetworking": false,
