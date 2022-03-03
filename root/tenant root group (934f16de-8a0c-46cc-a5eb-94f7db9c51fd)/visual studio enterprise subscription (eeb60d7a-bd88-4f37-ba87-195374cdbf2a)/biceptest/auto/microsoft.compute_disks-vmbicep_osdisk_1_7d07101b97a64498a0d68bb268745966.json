@@ -35,7 +35,7 @@
         },
         "networkAccessPolicy": "AllowAll",
         "publicNetworkAccess": "Enabled",
-        "diskState": "Attached",
+        "diskState": "Reserved",
         "diskSizeBytes": 136367308800,
         "uniqueId": "7d07101b-97a6-4498-a0d6-8bb268745966"
       }
