@@ -45,7 +45,7 @@
         },
         "|GitHub": {
             "!Condition": "EnvGithubAction",
-            "AzOps.Core.State": "%GITHUB_WORKSPACE%/root"
+            "AzOps.Core.State": "%GITHUB_WORKSPACE%/raksh"
         },
         "PSFramework": {
             "Message.Info.Maximum": 9
