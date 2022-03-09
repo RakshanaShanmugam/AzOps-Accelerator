@@ -12,7 +12,7 @@
     {
       "type": "Microsoft.Storage/storageAccounts",
       "name": "biceptestraks",
-      "apiVersion": "2021-08-01",
+      "apiVersion": "2021-09-01",
       "location": "northeurope",
       "tags": {},
       "properties": {
