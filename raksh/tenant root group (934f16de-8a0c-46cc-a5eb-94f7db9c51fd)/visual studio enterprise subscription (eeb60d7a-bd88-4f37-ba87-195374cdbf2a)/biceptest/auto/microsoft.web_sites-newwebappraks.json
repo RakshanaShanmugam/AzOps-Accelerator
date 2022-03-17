@@ -83,6 +83,7 @@
         "storageRecoveryDefaultState": "Running",
         "contentAvailabilityState": "Normal",
         "runtimeAvailabilityState": "Normal",
+        "vnetRouteAllEnabled": false,
         "siteConfig": {
           "numberOfWorkers": 1,
           "defaultDocuments": null,
@@ -151,6 +152,8 @@
           "scmIpSecurityRestrictionsUseMain": null,
           "http20Enabled": false,
           "minTlsVersion": null,
+          "minTlsCipherSuite": null,
+          "supportedTlsCipherSuites": null,
           "scmMinTlsVersion": null,
           "ftpsState": null,
           "preWarmedInstanceCount": null,
@@ -163,7 +166,8 @@
           "azureStorageAccounts": null,
           "http20ProxyFlag": null,
           "sitePort": null,
-          "antivirusScanEnabled": null
+          "antivirusScanEnabled": null,
+          "storageType": null
         },
         "deploymentId": "newwebappraks",
         "slotName": null,
@@ -205,6 +209,7 @@
         "inProgressOperationId": null,
         "geoDistributions": null,
         "privateEndpointConnections": [],
+        "publicNetworkAccess": null,
         "buildVersion": null,
         "targetBuildVersion": null,
         "migrationState": null,
