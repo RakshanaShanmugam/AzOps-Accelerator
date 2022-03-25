@@ -37,11 +37,7 @@
               ],
               "serviceEndpoints": [
                 {
-                  "service": "Microsoft.Storage",
-                  "locations": [
-                    "northeurope",
-                    "westeurope"
-                  ]
+                  "service": "Microsoft.KeyVault"
                 }
               ],
               "delegations": [
