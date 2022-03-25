@@ -11,12 +11,12 @@
   "resources": [
     {
       "type": "Microsoft.Network/publicIPAddresses",
-      "name": "biceppip",
+      "name": "testpublicipfw",
       "apiVersion": "2021-12-01",
       "location": "northeurope",
-      "tags": null,
+      "tags": {},
       "properties": {
-        "ipAddress": "20.54.81.81",
+        "ipAddress": "52.169.227.55",
         "publicIPAddressVersion": "IPv4",
         "publicIPAllocationMethod": "Static",
         "idleTimeoutInMinutes": 4,
