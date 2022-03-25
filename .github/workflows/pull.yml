@@ -30,9 +30,6 @@ on:
   # Default: Every 6 hours
   #
 
-  schedule:
-    - cron: "0 */6 * * *"
-
   #
   # Workflow Run
   # Triggers this workflow upon the completion of
@@ -159,7 +156,7 @@ jobs:
       - name: "Dependencies"
         run: |
           . .github/scripts/Install.ps1
-          Install-SourceModule -Repository "SomilGanguly/AzOps" -Branch "sogangul-AzOps-FixVirtualNetworkRedeployment"
+          Install-SourceModule -Repository "SomilGanguly/AzOps" -Branch "sogangul-AzOps-FixKind&SkuForARM"
           $module = Get-Module -Name AzOps -ListAvailable
           $data = Import-PowerShellDataFile -Path $module.Path
           foreach ($dependency in $data.RequiredModules) {
