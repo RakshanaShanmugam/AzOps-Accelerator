@@ -12,7 +12,15 @@
     {
       "type": "Microsoft.Compute/disks",
       "name": "testvm012_disk1_3eb3307b47ba4c42ad75d0e855628096",
-      "apiVersion": "2021-12-01",
+      "Sku": {
+        "Name": "Premium_LRS",
+        "Tier": "Premium",
+        "Size": null,
+        "Family": null,
+        "Model": null,
+        "Capacity": null
+      },
+      "apiVersion": "2022-03-02",
       "location": "northeurope",
       "tags": null,
       "properties": {
