@@ -1,0 +1,73 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "_generator": {
+      "name": "AzOps"
+    }
+  },
+  "parameters": {},
+  "variables": {},
+  "resources": [
+    {
+      "type": "Microsoft.Web/serverfarms",
+      "name": "testAsp",
+      "Sku": {
+        "Name": "B1",
+        "Tier": "Basic",
+        "Size": "B1",
+        "Family": "B",
+        "Model": null,
+        "Capacity": 1
+      },
+      "Kind": "linux",
+      "apiVersion": "2021-03-01",
+      "location": "Central US",
+      "tags": null,
+      "properties": {
+        "serverFarmId": 25934,
+        "name": "testAsp",
+        "workerSize": "Default",
+        "workerSizeId": 0,
+        "workerTierName": null,
+        "numberOfWorkers": 1,
+        "currentWorkerSize": "Default",
+        "currentWorkerSizeId": 0,
+        "currentNumberOfWorkers": 1,
+        "status": "Ready",
+        "webSpace": "biceptest-CentralUSwebspace-Linux",
+        "subscription": "eeb60d7a-bd88-4f37-ba87-195374cdbf2a",
+        "adminSiteName": null,
+        "hostingEnvironment": null,
+        "hostingEnvironmentProfile": null,
+        "maximumNumberOfWorkers": 3,
+        "planName": "VirtualDedicatedPlan",
+        "adminRuntimeSiteName": null,
+        "computeMode": "Dedicated",
+        "siteMode": null,
+        "geoRegion": "Central US",
+        "perSiteScaling": false,
+        "elasticScaleEnabled": false,
+        "maximumElasticWorkerCount": 1,
+        "numberOfSites": 0,
+        "hostingEnvironmentId": null,
+        "isSpot": false,
+        "spotExpirationTime": null,
+        "tags": null,
+        "kind": "linux",
+        "resourceGroup": "biceptest",
+        "reserved": true,
+        "isXenon": false,
+        "hyperV": false,
+        "mdmId": "waws-prod-dm1-179_25934",
+        "targetWorkerCount": 0,
+        "targetWorkerSizeId": 0,
+        "webSiteId": null,
+        "existingServerFarmIds": null,
+        "kubeEnvironmentProfile": null,
+        "zoneRedundant": false
+      }
+    }
+  ],
+  "outputs": {}
+}

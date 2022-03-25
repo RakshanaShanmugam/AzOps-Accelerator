@@ -12,6 +12,15 @@
     {
       "type": "Microsoft.Storage/storageAccounts",
       "name": "csg10032000c75ca3b5",
+      "Sku": {
+        "Name": "Standard_LRS",
+        "Tier": "Standard",
+        "Size": null,
+        "Family": null,
+        "Model": null,
+        "Capacity": null
+      },
+      "Kind": "StorageV2",
       "apiVersion": "2021-09-01",
       "location": "centralindia",
       "tags": {

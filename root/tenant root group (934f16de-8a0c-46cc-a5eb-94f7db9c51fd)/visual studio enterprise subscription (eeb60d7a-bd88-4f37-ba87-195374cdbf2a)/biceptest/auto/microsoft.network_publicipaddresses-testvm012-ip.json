@@ -12,6 +12,14 @@
     {
       "type": "Microsoft.Network/publicIPAddresses",
       "name": "testvm012-ip",
+      "Sku": {
+        "Name": "Basic",
+        "Tier": "Regional",
+        "Size": null,
+        "Family": null,
+        "Model": null,
+        "Capacity": null
+      },
       "apiVersion": "2021-12-01",
       "location": "northeurope",
       "tags": null,
