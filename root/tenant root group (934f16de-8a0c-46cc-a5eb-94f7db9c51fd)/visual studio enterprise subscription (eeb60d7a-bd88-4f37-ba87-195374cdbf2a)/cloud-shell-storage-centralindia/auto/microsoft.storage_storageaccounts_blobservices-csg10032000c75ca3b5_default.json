@@ -14,7 +14,7 @@
       "apiVersion": "2021-08-01",
       "name": "csg10032000c75ca3b5/default",
       "sku": {
-        "name": "Standard_LRS",
+        "name": "Standard_GRS",
         "tier": "Standard"
       },
       "properties": {
