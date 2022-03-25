@@ -37,7 +37,10 @@
               ],
               "serviceEndpoints": [
                 {
-                  "service": "Microsoft.KeyVault"
+                  "service": "Microsoft.KeyVault",
+                  "locations": [
+                    "*"
+                  ]
                 }
               ],
               "delegations": [
