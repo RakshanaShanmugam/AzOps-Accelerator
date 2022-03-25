@@ -20,10 +20,9 @@
         },
         "serviceEndpoints": [
           {
-            "service": "Microsoft.Storage",
+            "service": "Microsoft.KeyVault",
             "locations": [
-              "northeurope",
-              "westeurope"
+              "*"
             ]
           }
         ],
