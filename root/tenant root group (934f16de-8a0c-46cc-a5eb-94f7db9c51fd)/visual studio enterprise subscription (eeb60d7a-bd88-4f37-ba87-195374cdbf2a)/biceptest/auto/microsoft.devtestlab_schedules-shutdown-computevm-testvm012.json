@@ -11,7 +11,7 @@
   "resources": [
     {
       "type": "microsoft.devtestlab/schedules",
-      "name": "shutdown-computevm-vmbicep",
+      "name": "shutdown-computevm-testvm012",
       "apiVersion": "2018-10-15-preview",
       "location": "northeurope",
       "tags": null,
@@ -28,8 +28,8 @@
           "emailRecipient": "rakshana1002@outlook.com",
           "notificationLocale": "en"
         },
-        "targetResourceId": "/subscriptions/eeb60d7a-bd88-4f37-ba87-195374cdbf2a/resourceGroups/biceptest/providers/Microsoft.Compute/virtualMachines/vmbicep",
-        "uniqueIdentifier": "23a97206-9cec-4244-889b-df01cb9e3682"
+        "targetResourceId": "/subscriptions/eeb60d7a-bd88-4f37-ba87-195374cdbf2a/resourceGroups/biceptest/providers/Microsoft.Compute/virtualMachines/testvm012",
+        "uniqueIdentifier": "89838b47-427e-470f-a621-54c6b89c4e63"
       }
     }
   ],
