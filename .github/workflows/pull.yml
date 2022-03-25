@@ -30,8 +30,6 @@ on:
   # Default: Every 6 hours
   #
 
-  schedule:
-    - cron: "0 */6 * * *"
 
   #
   # Workflow Run
@@ -70,7 +68,7 @@ env:
   # Default: root
   #
 
-  folder: "raksh"
+  folder: "root"
 
   #
   # Branch Name
