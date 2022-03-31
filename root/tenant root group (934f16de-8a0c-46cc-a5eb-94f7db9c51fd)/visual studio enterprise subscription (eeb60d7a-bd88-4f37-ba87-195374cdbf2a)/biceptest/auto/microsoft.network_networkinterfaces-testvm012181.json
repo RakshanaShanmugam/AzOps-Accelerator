@@ -32,7 +32,7 @@
                 "id": "/subscriptions/eeb60d7a-bd88-4f37-ba87-195374cdbf2a/resourceGroups/biceptest/providers/Microsoft.Network/publicIPAddresses/testvm012-ip",
                 "properties": {
                   "provisioningState": "Succeeded",
-                  "resourceGuid": "4d55de20-ac54-4b8b-8079-692ebf2a36d2",
+                  "resourceGuid": "fffa2a11-f1f7-4d9e-92eb-f708ae768f20",
                   "publicIPAddressVersion": "IPv4",
                   "publicIPAllocationMethod": "Dynamic",
                   "idleTimeoutInMinutes": 4,
