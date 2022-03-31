@@ -13,7 +13,7 @@
       "type": "Microsoft.Storage/storageAccounts",
       "name": "csg10032000c75ca3b5",
       "Sku": {
-        "Name": "Standard_LRS",
+        "Name": "Standard_GRS",
         "Tier": "Standard",
         "Size": null,
         "Family": null,
@@ -54,7 +54,7 @@
           },
           "keySource": "Microsoft.Storage"
         },
-        "accessTier": "Hot",
+        "accessTier": "Cool",
         "secondaryLocation": "southindia",
         "statusOfSecondary": "available"
       }
