@@ -54,7 +54,7 @@
           },
           "keySource": "Microsoft.Storage"
         },
-        "accessTier": "Hot",
+        "accessTier": "Cool",
         "secondaryLocation": "southindia",
         "statusOfSecondary": "available"
       }
