@@ -20,7 +20,7 @@
         "Model": null,
         "Capacity": null
       },
-      "apiVersion": "2022-03-02",
+      "apiVersion": "2021-12-01",
       "location": "northeurope",
       "tags": null,
       "properties": {

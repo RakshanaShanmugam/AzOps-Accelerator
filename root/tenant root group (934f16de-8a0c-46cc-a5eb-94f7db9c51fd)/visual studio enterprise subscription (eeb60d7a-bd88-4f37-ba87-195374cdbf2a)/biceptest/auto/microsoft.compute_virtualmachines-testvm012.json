@@ -12,7 +12,7 @@
     {
       "type": "Microsoft.Compute/virtualMachines",
       "name": "testvm012",
-      "apiVersion": "2022-03-01",
+      "apiVersion": "2021-11-01",
       "location": "northeurope",
       "tags": null,
       "properties": {
