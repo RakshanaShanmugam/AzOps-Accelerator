@@ -13,7 +13,7 @@
       "type": "Microsoft.Storage/storageAccounts",
       "name": "csg10032000c75ca3b5",
       "Sku": {
-        "Name": "Standard_GRS",
+        "Name": "Standard_LRS",
         "Tier": "Standard",
         "Size": null,
         "Family": null,
