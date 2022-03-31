@@ -33,7 +33,7 @@
         "allowCrossTenantReplication": true,
         "privateEndpointConnections": [],
         "minimumTlsVersion": "TLS1_2",
-        "allowBlobPublicAccess": true,
+        "allowBlobPublicAccess": false,
         "allowSharedKeyAccess": true,
         "networkAcls": {
           "bypass": "AzureServices",
@@ -56,7 +56,7 @@
           },
           "keySource": "Microsoft.Storage"
         },
-        "accessTier": "Hot"
+        "accessTier": "Cool"
       }
     }
   ],
