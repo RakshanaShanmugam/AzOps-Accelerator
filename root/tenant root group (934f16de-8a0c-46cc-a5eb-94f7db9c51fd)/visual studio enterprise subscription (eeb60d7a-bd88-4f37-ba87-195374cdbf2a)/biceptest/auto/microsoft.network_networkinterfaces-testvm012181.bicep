@@ -19,7 +19,7 @@ resource testvm012181 'Microsoft.Network/networkInterfaces@2022-01-01' = {
             id: '/subscriptions/eeb60d7a-bd88-4f37-ba87-195374cdbf2a/resourceGroups/biceptest/providers/Microsoft.Network/publicIPAddresses/testvm012-ip'
             properties: {
               provisioningState: 'Succeeded'
-              resourceGuid: '37dbbd81-9f4b-46d7-9e4a-d979ba32d5aa'
+              resourceGuid: 'c32b5689-2de1-4416-8811-f1f2ddf8d28a'
               publicIPAddressVersion: 'IPv4'
               publicIPAllocationMethod: 'Dynamic'
               idleTimeoutInMinutes: 4
