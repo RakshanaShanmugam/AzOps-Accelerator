@@ -13,7 +13,7 @@
       "type": "Microsoft.Network/networkInterfaces",
       "name": "testvm012181",
       "Kind": "Regular",
-      "apiVersion": "2021-12-01",
+      "apiVersion": "2022-01-01",
       "location": "northeurope",
       "tags": null,
       "properties": {
@@ -32,7 +32,7 @@
                 "id": "/subscriptions/eeb60d7a-bd88-4f37-ba87-195374cdbf2a/resourceGroups/biceptest/providers/Microsoft.Network/publicIPAddresses/testvm012-ip",
                 "properties": {
                   "provisioningState": "Succeeded",
-                  "resourceGuid": "e6512a65-5856-4cf6-aedf-f8e1b92a47ec",
+                  "resourceGuid": "8a58db5d-5884-418b-adc8-03db572e7b9c",
                   "publicIPAddressVersion": "IPv4",
                   "publicIPAllocationMethod": "Dynamic",
                   "idleTimeoutInMinutes": 4,
