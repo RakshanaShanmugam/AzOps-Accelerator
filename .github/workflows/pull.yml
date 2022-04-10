@@ -156,7 +156,7 @@ jobs:
       - name: "Dependencies"
         run: |
           . .github/scripts/Install.ps1
-          Install-SourceModule -Repository "SomilGanguly/AzOps" -Branch "sogangul-AzOps-FixKind&SkuForARM"
+          Install-SourceModule -Repository "SomilGanguly/AzOps" -Branch "sogangul-AzOps-PullBicepTemplate"
           $module = Get-Module -Name AzOps -ListAvailable
           $data = Import-PowerShellDataFile -Path $module.Path
           foreach ($dependency in $data.RequiredModules) {
