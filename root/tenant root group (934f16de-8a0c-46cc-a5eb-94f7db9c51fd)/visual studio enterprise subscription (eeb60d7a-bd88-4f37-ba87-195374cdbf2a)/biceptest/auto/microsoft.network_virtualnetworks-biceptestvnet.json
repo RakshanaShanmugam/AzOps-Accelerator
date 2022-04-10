@@ -12,7 +12,7 @@
     {
       "type": "Microsoft.Network/virtualNetworks",
       "name": "biceptestvnet",
-      "apiVersion": "2021-12-01",
+      "apiVersion": "2022-01-01",
       "location": "northeurope",
       "tags": {},
       "properties": {
@@ -24,23 +24,30 @@
         "subnets": [
           {
             "name": "default",
+            "id": "/subscriptions/eeb60d7a-bd88-4f37-ba87-195374cdbf2a/resourceGroups/biceptest/providers/Microsoft.Network/virtualNetworks/biceptestvnet/subnets/default",
             "properties": {
               "addressPrefix": "10.0.0.0/24",
-              "networkSecurityGroup": {},
+              "networkSecurityGroup": {
+                "id": "/subscriptions/eeb60d7a-bd88-4f37-ba87-195374cdbf2a/resourceGroups/biceptest/providers/Microsoft.Network/networkSecurityGroups/testvm012-nsg"
+              },
               "ipConfigurations": [
-                {}
+                {
+                  "id": "/subscriptions/eeb60d7a-bd88-4f37-ba87-195374cdbf2a/resourceGroups/biceptest/providers/Microsoft.Network/networkInterfaces/testvm012181/ipConfigurations/ipconfig1"
+                }
               ],
               "serviceEndpoints": [
                 {
-                  "service": "Microsoft.KeyVault",
+                  "service": "Microsoft.Storage",
                   "locations": [
-                    "*"
+                    "northeurope",
+                    "westeurope"
                   ]
                 }
               ],
               "delegations": [
                 {
                   "name": "Microsoft.StoragePool.diskPools",
+                  "id": "/subscriptions/eeb60d7a-bd88-4f37-ba87-195374cdbf2a/resourceGroups/biceptest/providers/Microsoft.Network/virtualNetworks/biceptestvnet/subnets/default/delegations/Microsoft.StoragePool.diskPools",
                   "properties": {
                     "serviceName": "Microsoft.StoragePool/diskPools",
                     "actions": [
@@ -59,10 +66,13 @@
         "virtualNetworkPeerings": [
           {
             "name": "asd",
+            "id": "/subscriptions/eeb60d7a-bd88-4f37-ba87-195374cdbf2a/resourceGroups/biceptest/providers/Microsoft.Network/virtualNetworks/biceptestvnet/virtualNetworkPeerings/asd",
             "properties": {
               "peeringState": "Disconnected",
               "peeringSyncLevel": "FullyInSync",
-              "remoteVirtualNetwork": {},
+              "remoteVirtualNetwork": {
+                "id": "/subscriptions/eeb60d7a-bd88-4f37-ba87-195374cdbf2a/resourceGroups/biceptest/providers/Microsoft.Network/virtualNetworks/test1"
+              },
               "allowVirtualNetworkAccess": true,
               "allowForwardedTraffic": true,
               "allowGatewayTransit": false,
