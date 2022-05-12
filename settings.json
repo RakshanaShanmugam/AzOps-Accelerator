@@ -25,8 +25,8 @@
             "Core.PartialMgDiscoveryRoot": [],
             "Core.SkipPolicy": false,
             "Core.SkipResource": false,
-            "Core.BicepConversion": true,
-            "Core.SkipResourceGroup": false,
+            "Core.BicepConversion": false,
+            "Core.SkipResourceGroup": true,
             "Core.SkipResourceType": [
                 "microsoft.alertsmanagement/smartDetectorAlertRules",
                 "Microsoft.PowerPlatform/accounts",
@@ -34,8 +34,8 @@
                 "microsoft.visualstudio/account",
                 "Microsoft.VSOnline/plans"
             ],
-            "Core.SkipRole": false,
-            "Core.SkipChildResource": false,
+            "Core.SkipRole": true,
+            "Core.SkipChildResource": true,
             "Core.SubscriptionsToIncludeResourceGroups": "*",
             "Core.TemplateParameterFileSuffix": ".json",
             "Core.ThrottleLimit": 10
