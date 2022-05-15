@@ -23,10 +23,10 @@
             "Core.InvalidateCache": true,
             "Core.OfferType": "MS-AZR-0017P",
             "Core.PartialMgDiscoveryRoot": [],
-            "Core.SkipPolicy": false,
+            "Core.SkipPolicy": true,
             "Core.SkipResource": false,
             "Core.BicepConversion": false,
-            "Core.SkipResourceGroup": true,
+            "Core.SkipResourceGroup": false,
             "Core.SkipResourceType": [
                 "microsoft.alertsmanagement/smartDetectorAlertRules",
                 "Microsoft.PowerPlatform/accounts",
@@ -34,7 +34,7 @@
                 "microsoft.visualstudio/account",
                 "Microsoft.VSOnline/plans"
             ],
-            "Core.SkipRole": true,
+            "Core.SkipRole": false,
             "Core.SkipChildResource": true,
             "Core.SubscriptionsToIncludeResourceGroups": "*",
             "Core.TemplateParameterFileSuffix": ".json",
