@@ -11,7 +11,7 @@
   "resources": [
     {
       "type": "Microsoft.Storage/storageAccounts",
-      "name": "csg10032000craks",
+      "name": "csg10032000c75ca3b5",
       "Sku": {
         "Name": "Standard_GRS",
         "Tier": "Standard",
