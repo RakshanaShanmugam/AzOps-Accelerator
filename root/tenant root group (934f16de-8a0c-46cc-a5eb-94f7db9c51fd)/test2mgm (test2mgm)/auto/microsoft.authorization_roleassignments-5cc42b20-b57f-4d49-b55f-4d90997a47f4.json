@@ -11,7 +11,7 @@
   "resources": [
     {
       "type": "Microsoft.Authorization/roleAssignments",
-      "name": "ce045906-0260-41b4-acce-4add894bc60d",
+      "name": "5cc42b20-b57f-4d49-b55f-4d90997a47f4",
       "apiVersion": "2022-01-01-preview",
       "properties": {
         "DisplayName": "nature",
