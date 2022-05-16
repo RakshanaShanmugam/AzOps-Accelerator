@@ -5,8 +5,11 @@ resource testhub 'Microsoft.Network/virtualHubs@2022-01-01' = {
   properties: {
     virtualHubRouteTableV2s: []
     addressPrefix: '10.0.0.0/24'
-    virtualRouterAsn: 0
-    virtualRouterIps: []
+    virtualRouterAsn: 65515
+    virtualRouterIps: [
+      '10.0.0.69'
+      '10.0.0.68'
+    ]
     routeTable: {
       routes: []
     }
@@ -18,7 +21,7 @@ resource testhub 'Microsoft.Network/virtualHubs@2022-01-01' = {
     }
     networkVirtualAppliances: []
     sku: 'Standard'
-    routingState: 'Provisioning'
+    routingState: 'Provisioned'
     allowBranchToBranchTraffic: false
     hubRoutingPreference: 'ExpressRoute'
   }
