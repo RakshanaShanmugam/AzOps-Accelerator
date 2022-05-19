@@ -15,7 +15,7 @@
       "apiVersion": "2021-06-01",
       "location": null,
       "properties": {
-        "Scope": "/providers/Microsoft.Management/managementGroups/934f16de-8a0c-46cc-a5eb-94f7db9c51fd",
+        "Scope": "/subscriptions/eeb60d7a-bd88-4f37-ba87-195374cdbf2a",
         "NotScopes": [],
         "DisplayName": "Storage account keys should not be expired",
         "Description": null,
