@@ -4,7 +4,7 @@ function Install-SourceModule {
     param(
         $Repository,
 
-        $Branch = "sogangul-AzOps-PullBicepTemplate"
+        $Branch = "sogangul-AzOps-PushRenameOperation"
     )
 
     process {
